@@ -34,7 +34,7 @@
               <span
                 v-for="(stack, stackIndex) in project.stack"
                 :key="stackIndex"
-                :class="`${getStackClasses(stack)}`"
+                :class="getStackClasses(stack)"
               >
                 {{ stack }}
               </span>
