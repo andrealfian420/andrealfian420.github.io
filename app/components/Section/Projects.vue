@@ -116,46 +116,28 @@ const getStackClasses = (stackName) => {
 
   switch (true) {
     case name.includes('laravel'):
-      return (
-        baseClasses +
-        'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-300'
-      );
+      return `${baseClasses} bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-300`;
 
     case name.includes('vue'):
     case name.includes('nuxt'):
     case name.includes('node'):
-      return (
-        baseClasses +
-        'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-300'
-      );
+      return `${baseClasses} bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-300`;
 
     case name.includes('bootstrap'):
     case name.includes('tailwind'):
     case name.includes('php'):
-      return (
-        baseClasses +
-        'bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-300'
-      );
+      return `${baseClasses} bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-300`;
 
     case name.includes('react'):
     case name.includes('mysql'):
     case name.includes('jquery'):
-      return (
-        baseClasses +
-        'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-300'
-      );
+      return `${baseClasses} bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-300`;
 
     case name.includes('firebase'):
-      return (
-        baseClasses +
-        'bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-300'
-      );
+      return `${baseClasses} bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-300`;
 
     default:
-      return (
-        baseClasses +
-        'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-300'
-      );
+      return `${baseClasses} bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-300`;
   }
 };
 </script>
