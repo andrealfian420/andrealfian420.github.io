@@ -2,15 +2,14 @@
   <section id="projects" class="py-24 px-6 bg-white dark:bg-slate-900">
     <div class="max-w-5xl mx-auto">
       <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-        <div class="max-w-2xl">
+        <div class="max-w-3xl">
           <h2
             class="text-3xl font-bold text-gray-900 dark:text-slate-100 tracking-tight"
           >
-            Featured Projects
+            {{ t('projects_title') }}
           </h2>
           <p class="text-gray-500 dark:text-slate-400 mt-3 text-lg">
-            Several fullstack projects I have delivered using industry
-            standards.
+            {{ t('projects_desc') }}
           </p>
         </div>
       </div>
@@ -51,15 +50,13 @@
             <p
               class="text-gray-600 dark:text-slate-400 text-sm mb-6 leading-relaxed"
             >
-              A digital education platform (LMS) designed for medical guidance
-              and residency preparation. Integrates private video streaming and
-              learning evaluation systems based on quizzes and tryouts.
+              {{ t('project_sinau_desc') }}
             </p>
             <a
               href="https://sinauyuk.id"
               target="_blank"
               class="mt-auto text-sm font-semibold text-gray-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
-              >Visit Site
+              >{{ t('btn_visit') }}
               <svg
                 class="w-4 h-4 ml-1"
                 fill="none"
@@ -111,14 +108,13 @@
             <p
               class="text-gray-600 dark:text-slate-400 text-sm mb-6 leading-relaxed"
             >
-              Event management system application to manage registration,
-              payments, merchandise purchases, and event tickets digitally.
+              {{ t('project_festivia_desc') }}
             </p>
             <a
               href="https://festivia.id"
               target="_blank"
               class="mt-auto text-sm font-semibold text-gray-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
-              >Visit Site
+              >{{ t('btn_visit') }}
               <svg
                 class="w-4 h-4 ml-1"
                 fill="none"
@@ -170,15 +166,13 @@
             <p
               class="text-gray-600 dark:text-slate-400 text-sm mb-6 leading-relaxed"
             >
-              Integrated event management system covering registration,
-              ticketing, payments, and medical abstract grading for seminar
-              participants.
+              {{ t('project_isicam_desc') }}
             </p>
             <a
               href="https://isicam.id"
               target="_blank"
               class="mt-auto text-sm font-semibold text-gray-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
-              >Visit Site
+              >{{ t('btn_visit') }}
               <svg
                 class="w-4 h-4 ml-1"
                 fill="none"
@@ -234,15 +228,13 @@
             <p
               class="text-gray-600 dark:text-slate-400 text-sm mb-6 leading-relaxed"
             >
-              Housing management system for the EPIC group. Features include
-              resident management, dues payment, complaint reporting, and guest
-              tracking for residential areas.
+              {{ t('project_epic_desc') }}
             </p>
             <a
               href="https://epicestate.web.id"
               target="_blank"
               class="mt-auto text-sm font-semibold text-gray-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
-              >Visit Site
+              >{{ t('btn_visit') }}
               <svg
                 class="w-4 h-4 ml-1"
                 fill="none"
@@ -262,3 +254,7 @@
     </div>
   </section>
 </template>
+
+<script setup>
+const { t } = useI18n();
+</script>

@@ -8,10 +8,10 @@
         <h2
           class="text-3xl font-bold text-gray-900 dark:text-slate-100 tracking-tight"
         >
-          Selected Technologies
+          {{ t('stack_title') }}
         </h2>
         <p class="text-gray-500 dark:text-slate-400 mt-3 text-lg">
-          Best-in-class tools for performance, security, and scalability.
+          {{ t('stack_desc') }}
         </p>
       </div>
 
@@ -38,12 +38,11 @@
               </svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 dark:text-slate-100">
-              Laravel Ecosystem
+              {{ t('stack_laravel_title') }}
             </h3>
           </div>
           <p class="text-gray-600 dark:text-slate-400 mb-8 leading-relaxed">
-            Specializing in building secure and maintainable enterprise-scale
-            applications (Monolith).
+            {{ t('stack_laravel_desc') }}
           </p>
           <div class="flex flex-wrap gap-2">
             <span
@@ -95,12 +94,11 @@
               </svg>
             </div>
             <h3 class="text-xl font-bold text-gray-900 dark:text-slate-100">
-              JS & Universal Apps
+              {{ t('stack_js_title') }}
             </h3>
           </div>
           <p class="text-gray-600 dark:text-slate-400 mb-8 leading-relaxed">
-            Building modern interactive interfaces (SPA) and cross-platform
-            applications for Web & Mobile.
+            {{ t('stack_js_desc') }}
           </p>
           <div class="flex flex-wrap gap-2">
             <span
@@ -129,3 +127,7 @@
     </div>
   </section>
 </template>
+
+<script setup>
+const { t } = useI18n();
+</script>
