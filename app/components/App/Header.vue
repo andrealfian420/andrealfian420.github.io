@@ -7,7 +7,7 @@
         :to="`/${locale === 'en' ? '' : locale}`"
         class="text-xl font-bold tracking-tight text-gray-900 hover:text-blue-600 dark:text-slate-100 dark:hover:text-blue-400"
       >
-        Alfian Andre Ramadhan
+        {{ '<Andre />' }}
       </NuxtLink>
 
       <nav class="hidden space-x-8 text-sm font-medium md:flex">
