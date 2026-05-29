@@ -16,7 +16,7 @@
         {{ t('hero_desc_1') }}
         <strong class="hero-strong">(Laravel/Node)</strong>
         {{ t('hero_desc_2') }}
-        <strong class="hero-strong">(Vue/Inertia)</strong>.
+        <strong class="hero-strong">(Vue/Next)</strong>.
       </p>
 
       <div class="hero-ctas">

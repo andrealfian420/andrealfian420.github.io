@@ -12,8 +12,8 @@
           <h3 class="stack-col-title">{{ t('stack_laravel_title') }}</h3>
           <p class="stack-col-desc">{{ t('stack_laravel_desc') }}</p>
           <div class="tech-tags">
-            <span class="tech-tag">PHP 8.2</span>
-            <span class="tech-tag">Laravel 11</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">Laravel Framework</span>
             <span class="tech-tag">Inertia.js</span>
             <span class="tech-tag">jQuery</span>
             <span class="tech-tag">MySQL</span>
@@ -27,8 +27,11 @@
           <h3 class="stack-col-title">{{ t('stack_js_title') }}</h3>
           <p class="stack-col-desc">{{ t('stack_js_desc') }}</p>
           <div class="tech-tags">
-            <span class="tech-tag">Vue.js 3</span>
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Next.js</span>
             <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Redis</span>
             <span class="tech-tag">Express</span>
             <span class="tech-tag">MySQL</span>
             <span class="tech-tag">PostgreSQL</span>
