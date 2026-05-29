@@ -139,7 +139,7 @@ const projects = computed(() => [
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-6);
 }
 
