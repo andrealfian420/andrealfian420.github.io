@@ -1,10 +1,129 @@
 @import 'tailwindcss';
 @variant dark (&:where(.dark, .dark *));
 
-*,
-*::before,
-*::after {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+/* Hallmark · macrostructure: Marquee Hero · tone: technical · anchor hue: teal
+ * genre: modern-minimal · theme: custom (vibe: "precise developer craft, quiet confidence")
+ * paper: oklch(98.5% 0.003 240) · accent: oklch(60% 0.14 196) teal
+ * display: Space Grotesk · body: Inter
+ * Pre-emit critique: P4 H5 E5 S4 R5 V4 */
+
+html,
+body {
+  overflow-x: clip;
+}
+
+:root {
+  /* Color tokens */
+  --color-paper: oklch(98.5% 0.003 240);
+  --color-paper-2: oklch(96% 0.006 240);
+  --color-paper-3: oklch(92% 0.008 240);
+  --color-ink: oklch(13% 0.02 245);
+  --color-ink-muted: oklch(48% 0.012 245);
+  --color-ink-subtle: oklch(72% 0.008 245);
+  --color-accent: oklch(58% 0.15 196);
+  --color-accent-bg: oklch(97% 0.025 196);
+  --color-rule: oklch(86% 0.006 240);
+  --color-focus: oklch(58% 0.15 196);
+
+  /* Font tokens */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Type scale */
+  --text-display: clamp(3rem, 7vw, 5.5rem);
+  --text-display-s: clamp(1.8rem, 4vw, 2.75rem);
+  --text-xl: 1.25rem;
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+
+  /* Spacing (4pt scale) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --dur-fast: 100ms;
+  --dur-normal: 200ms;
+  --dur-slow: 350ms;
+
+  /* Radius */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  /* Tech category tokens */
+  --color-tech-backend: oklch(52% 0.14 22); /* Laravel / PHP */
+  --color-tech-backend-bg: oklch(97% 0.02 22);
+  --color-tech-frontend: oklch(48% 0.12 145); /* Vue / Node */
+  --color-tech-frontend-bg: oklch(97% 0.02 145);
+  --color-tech-css: oklch(50% 0.12 292); /* Bootstrap / Tailwind */
+  --color-tech-css-bg: oklch(97% 0.02 292);
+  --color-tech-data: oklch(48% 0.11 230); /* MySQL / PostgreSQL / jQuery */
+  --color-tech-data-bg: oklch(97% 0.02 230);
+  --color-tech-service: oklch(56% 0.13 52); /* Firebase */
+  --color-tech-service-bg: oklch(97% 0.02 52);
+}
+
+.dark {
+  --color-paper: oklch(11% 0.015 245);
+  --color-paper-2: oklch(15.5% 0.018 245);
+  --color-paper-3: oklch(20% 0.02 245);
+  --color-ink: oklch(95% 0.005 245);
+  --color-ink-muted: oklch(62% 0.012 245);
+  --color-ink-subtle: oklch(38% 0.012 245);
+  --color-accent: oklch(68% 0.17 196);
+  --color-accent-bg: oklch(18% 0.04 196);
+  --color-rule: oklch(20% 0.015 245);
+  --color-focus: oklch(68% 0.17 196);
+
+  /* Tech category tokens — dark overrides */
+  --color-tech-backend: oklch(72% 0.15 22);
+  --color-tech-backend-bg: oklch(20% 0.06 22);
+  --color-tech-frontend: oklch(68% 0.13 145);
+  --color-tech-frontend-bg: oklch(20% 0.05 145);
+  --color-tech-css: oklch(70% 0.12 292);
+  --color-tech-css-bg: oklch(20% 0.05 292);
+  --color-tech-data: oklch(68% 0.12 230);
+  --color-tech-data-bg: oklch(20% 0.05 230);
+  --color-tech-service: oklch(72% 0.14 52);
+  --color-tech-service-bg: oklch(20% 0.06 52);
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 150ms !important;
+    animation-duration: 150ms !important;
+  }
 }

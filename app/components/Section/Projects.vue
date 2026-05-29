@@ -1,74 +1,48 @@
 <template>
-  <section id="projects" class="py-24 px-6 bg-white dark:bg-slate-900">
-    <div class="max-w-5xl mx-auto">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-        <div class="max-w-3xl">
-          <h2
-            class="text-3xl font-bold text-gray-900 dark:text-slate-100 tracking-tight"
-          >
-            {{ t('projects_title') }}
-          </h2>
-          <p class="text-gray-500 dark:text-slate-400 mt-3 text-lg">
-            {{ t('projects_desc') }}
-          </p>
-        </div>
-      </div>
+  <section id="projects" class="projects-section">
+    <div class="projects-inner">
+      <header class="section-header">
+        <h2 class="section-title">{{ t('projects_title') }}</h2>
+        <p class="section-desc">{{ t('projects_desc') }}</p>
+      </header>
+      <hr class="section-rule" aria-hidden="true" />
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div
+      <div class="projects-grid">
+        <article
           v-for="(project, index) in projects"
           :key="index"
-          class="group bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-gray-200/50 dark:hover:shadow-black/30 flex flex-col h-full"
+          class="project-card"
         >
-          <div
-            class="bg-gray-100 dark:bg-slate-700 h-52 overflow-hidden relative shrink-0"
-          >
+          <div class="project-image">
             <NuxtImg
               :src="project.img"
-              :alt="project.title + ' Project'"
-              class="w-full h-full object-cover group-hover:scale-105 opacity-90 group-hover:opacity-100 transform-gpu !transition-all !duration-500 ease-in-out"
+              :alt="project.title + ' screenshot'"
+              class="project-img"
             />
           </div>
-          <div class="p-6 flex flex-col flex-grow">
-            <div class="mb-4 flex flex-wrap gap-2">
+          <div class="project-body">
+            <div class="project-tags">
               <span
                 v-for="(stack, stackIndex) in project.stack"
                 :key="stackIndex"
-                :class="getStackClasses(stack)"
+                class="project-tag"
+                :class="getTagClass(stack)"
               >
                 {{ stack }}
               </span>
             </div>
-            <h3
-              class="text-lg font-bold text-gray-900 dark:text-slate-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400"
-            >
-              {{ project.title }}
-            </h3>
-            <p
-              class="text-gray-600 dark:text-slate-400 text-sm mb-6 leading-relaxed"
-            >
-              {{ project.desc }}
-            </p>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-desc">{{ project.desc }}</p>
             <a
               :href="project.url"
               target="_blank"
-              class="mt-auto text-sm font-semibold text-gray-900 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center"
-              >{{ t('btn_visit') }}
-              <svg
-                class="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path></svg
-            ></a>
+              rel="noopener"
+              class="project-link"
+            >
+              {{ t('btn_visit') }} →
+            </a>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -76,6 +50,18 @@
 
 <script setup>
 const { t } = useI18n();
+
+const getTagClass = (name) => {
+  const n = name.toLowerCase();
+  if (n.includes('laravel') || n.includes('php')) return 'tag--backend';
+  if (n.includes('vue') || n.includes('nuxt') || n.includes('node'))
+    return 'tag--frontend';
+  if (n.includes('bootstrap') || n.includes('tailwind')) return 'tag--css';
+  if (n.includes('mysql') || n.includes('postgresql') || n.includes('jquery'))
+    return 'tag--data';
+  if (n.includes('firebase')) return 'tag--service';
+  return '';
+};
 
 const projects = computed(() => [
   {
@@ -89,55 +75,222 @@ const projects = computed(() => [
     title: 'Festivia',
     desc: t('project_festivia_desc'),
     img: '/img/festivia.webp',
-    stack: ['Laravel', 'Bootstrap 5', 'Jquery'],
+    stack: ['Laravel', 'Bootstrap 5', 'jQuery'],
     url: 'https://festivia.id',
   },
   {
     title: 'Isicam',
     desc: t('project_isicam_desc'),
     img: '/img/isicam.webp',
-    stack: ['Laravel', 'Bootstrap 5', 'Jquery'],
+    stack: ['Laravel', 'Bootstrap 5', 'jQuery'],
     url: 'https://isicam.id',
   },
   {
     title: 'Epic Estate',
     desc: t('project_epic_desc'),
     img: '/img/epic.webp',
-    stack: ['Laravel', 'Bootstrap 5', 'Jquery', 'Firebase Cloud Messaging'],
+    stack: ['Laravel', 'Bootstrap 5', 'jQuery', 'Firebase'],
     url: 'https://epicestate.web.id',
   },
 ]);
-
-const getStackClasses = (stackName) => {
-  const name = stackName.toLowerCase();
-
-  const baseClasses =
-    'text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded ';
-
-  switch (true) {
-    case name.includes('laravel'):
-      return `${baseClasses} bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-300`;
-
-    case name.includes('vue'):
-    case name.includes('nuxt'):
-    case name.includes('node'):
-      return `${baseClasses} bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-300`;
-
-    case name.includes('bootstrap'):
-    case name.includes('tailwind'):
-    case name.includes('php'):
-      return `${baseClasses} bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-300`;
-
-    case name.includes('react'):
-    case name.includes('mysql'):
-    case name.includes('jquery'):
-      return `${baseClasses} bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-300`;
-
-    case name.includes('firebase'):
-      return `${baseClasses} bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-300`;
-
-    default:
-      return `${baseClasses} bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-300`;
-  }
-};
 </script>
+
+<style scoped>
+.projects-section {
+  padding: var(--space-20) var(--space-6) var(--space-24);
+}
+
+.projects-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.section-desc {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  margin: 0;
+  max-width: 42ch;
+  text-align: right;
+}
+
+.section-rule {
+  border: none;
+  border-top: 1px solid var(--color-rule);
+  margin: 0 0 var(--space-12);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.project-card {
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-paper);
+  will-change: transform;
+  transition:
+    border-color var(--dur-normal) var(--ease-out),
+    transform var(--dur-normal) var(--ease-out);
+}
+
+.project-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.project-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--color-paper-3);
+  flex-shrink: 0;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.9;
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+}
+
+.project-card:hover .project-img {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.project-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.project-tag {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-subtle);
+  background-color: var(--color-paper-3);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.5rem;
+}
+
+.tag--backend {
+  color: var(--color-tech-backend);
+  background-color: var(--color-tech-backend-bg);
+  border-color: color-mix(in oklch, var(--color-tech-backend) 20%, transparent);
+}
+
+.tag--frontend {
+  color: var(--color-tech-frontend);
+  background-color: var(--color-tech-frontend-bg);
+  border-color: color-mix(
+    in oklch,
+    var(--color-tech-frontend) 20%,
+    transparent
+  );
+}
+
+.tag--css {
+  color: var(--color-tech-css);
+  background-color: var(--color-tech-css-bg);
+  border-color: color-mix(in oklch, var(--color-tech-css) 20%, transparent);
+}
+
+.tag--data {
+  color: var(--color-tech-data);
+  background-color: var(--color-tech-data-bg);
+  border-color: color-mix(in oklch, var(--color-tech-data) 20%, transparent);
+}
+
+.tag--service {
+  color: var(--color-tech-service);
+  background-color: var(--color-tech-service-bg);
+  border-color: color-mix(in oklch, var(--color-tech-service) 20%, transparent);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.project-desc {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+  margin: 0 0 var(--space-5);
+  flex: 1;
+}
+
+.project-link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.project-link:hover {
+  opacity: 0.72;
+}
+
+@media (max-width: 640px) {
+  .section-desc {
+    text-align: left;
+  }
+}
+</style>

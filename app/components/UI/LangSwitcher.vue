@@ -2,11 +2,11 @@
   <div class="relative">
     <button
       @click="isLangOpen = !isLangOpen"
-      class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-100 dark:text-slate-200 dark:hover:bg-slate-800 transition-all focus:outline-none cursor-pointer"
+      class="lang-btn"
+      :aria-expanded="isLangOpen"
+      aria-haspopup="listbox"
     >
-      <div
-        class="relative w-6 h-4 rounded-sm shadow-sm overflow-hidden ring-1 ring-black/10 dark:ring-white/10"
-      >
+      <div class="flag-wrap">
         <svg
           v-if="locale === 'en'"
           viewBox="0 0 60 30"
@@ -30,7 +30,6 @@
             <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
           </g>
         </svg>
-
         <svg
           v-else
           viewBox="0 0 3 2"
@@ -43,11 +42,12 @@
       </div>
 
       <svg
-        class="w-4 h-4 text-gray-500 transition-transform duration-200"
-        :class="isLangOpen ? 'rotate-180' : ''"
+        class="chevron"
+        :class="{ 'rotate-180': isLangOpen }"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
         <path
           stroke-linecap="round"
@@ -58,17 +58,14 @@
       </svg>
     </button>
 
-    <div
-      v-if="isLangOpen"
-      class="absolute right-0 mt-2 w-40 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-gray-100 dark:border-slate-700 py-2 z-50 transform origin-top-right transition-all cursor-pointer"
-    >
+    <div v-if="isLangOpen" class="lang-dropdown" role="listbox">
       <button
         @click="changeLang('en')"
-        class="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors text-left group cursor-pointer"
+        class="lang-option"
+        role="option"
+        :aria-selected="locale === 'en'"
       >
-        <div
-          class="relative w-6 h-4 rounded-sm shadow-sm overflow-hidden ring-1 ring-black/10 dark:ring-white/10 group-hover:shadow-md transition-shadow"
-        >
+        <div class="flag-wrap">
           <svg
             viewBox="0 0 60 30"
             class="w-full h-full"
@@ -99,10 +96,11 @@
         <span>English</span>
         <svg
           v-if="locale === 'en'"
-          class="w-4 h-4 ml-auto text-blue-600"
+          class="check-icon"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          aria-hidden="true"
         >
           <path
             stroke-linecap="round"
@@ -115,11 +113,11 @@
 
       <button
         @click="changeLang('id')"
-        class="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors text-left group cursor-pointer"
+        class="lang-option"
+        role="option"
+        :aria-selected="locale === 'id'"
       >
-        <div
-          class="relative w-6 h-4 rounded-sm shadow-sm overflow-hidden ring-1 ring-black/10 dark:ring-white/10 group-hover:shadow-md transition-shadow"
-        >
+        <div class="flag-wrap">
           <svg
             viewBox="0 0 3 2"
             class="w-full h-full"
@@ -132,10 +130,11 @@
         <span>Indonesia</span>
         <svg
           v-if="locale === 'id'"
-          class="w-4 h-4 ml-auto text-blue-600"
+          class="check-icon"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          aria-hidden="true"
         >
           <path
             stroke-linecap="round"
@@ -164,3 +163,87 @@ const changeLang = (newLocale) => {
   isLangOpen.value = false;
 };
 </script>
+
+<style scoped>
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.5rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+.lang-btn:hover {
+  color: var(--color-ink);
+  background-color: var(--color-paper-3);
+}
+
+.flag-wrap {
+  width: 1.375rem;
+  height: 0.9375rem;
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+  outline: 1px solid color-mix(in oklch, var(--color-ink) 12%, transparent);
+}
+
+.chevron {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--color-ink-subtle);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.lang-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 50;
+  min-width: 9rem;
+  background-color: var(--color-paper);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  padding: var(--space-1) 0;
+  box-shadow: 0 4px 16px color-mix(in oklch, var(--color-ink) 8%, transparent);
+}
+
+.lang-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+.lang-option:hover {
+  color: var(--color-ink);
+  background-color: var(--color-paper-2);
+}
+
+.check-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-left: auto;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+</style>
