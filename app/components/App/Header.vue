@@ -1,7 +1,7 @@
 <template>
   <header class="site-header">
     <div class="header-inner">
-      <NuxtLink :to="`/${locale === 'en' ? '' : locale}`" class="wordmark">
+      <NuxtLink :to="localePath('/')" class="wordmark">
         &lt;Andre /&gt;
       </NuxtLink>
 
@@ -26,7 +26,8 @@
 </template>
 
 <script setup>
-const { locale, t } = useI18n();
+const { t } = useI18n();
+const localePath = useLocalePath();
 </script>
 
 <style scoped>

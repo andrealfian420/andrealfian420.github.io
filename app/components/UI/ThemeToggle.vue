@@ -1,16 +1,9 @@
 <template>
-  <button
-    @click="toggleTheme"
-    class="theme-btn"
-    :aria-label="
-      colorMode.value === 'dark'
-        ? 'Switch to light mode'
-        : 'Switch to dark mode'
-    "
-  >
+  <!-- Both icons are rendered; CSS picks one from the `.dark` class that
+       color-mode sets before first paint, so prerendered HTML never shows the wrong icon. -->
+  <button @click="toggleTheme" class="theme-btn" :aria-label="t('theme_toggle')">
     <svg
-      v-if="colorMode.value === 'dark'"
-      class="icon"
+      class="icon icon-sun"
       fill="currentColor"
       viewBox="0 0 20 20"
       aria-hidden="true"
@@ -23,8 +16,7 @@
     </svg>
 
     <svg
-      v-else
-      class="icon"
+      class="icon icon-moon"
       fill="currentColor"
       viewBox="0 0 20 20"
       aria-hidden="true"
@@ -37,14 +29,31 @@
 </template>
 
 <script setup>
+const { t } = useI18n();
 const colorMode = useColorMode();
 
+// Read the resolved mode, not the preference: with preference 'system' on a
+// dark OS, toggling off the preference would set 'dark' and change nothing.
 const toggleTheme = () => {
-  colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark';
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
 };
 </script>
 
 <style scoped>
+.icon-sun {
+  display: none;
+}
+
+/* Whole selector inside :global(): Vue drops anything after a bare
+   `:global(.dark)`, which would compile to `.dark { display: none }`. */
+:global(.dark .theme-btn .icon-sun) {
+  display: block;
+}
+
+:global(.dark .theme-btn .icon-moon) {
+  display: none;
+}
+
 .theme-btn {
   display: flex;
   align-items: center;
