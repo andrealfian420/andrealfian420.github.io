@@ -68,6 +68,7 @@ const { t } = useI18n();
   color: var(--color-ink);
   margin: 0 0 var(--space-8);
   overflow-wrap: anywhere;
+  text-wrap: balance; /* avoid a lone "from" on its own line */
   min-width: 0;
   max-width: 20ch;
 }

@@ -35,5 +35,11 @@ useSeoMeta({
   ogTitle: () => t('meta_title'),
   ogDescription: () => t('meta_desc'),
   ogType: 'website',
+  // Crawlers need an absolute URL; regenerate og.jpg (1200x630) if the hero changes.
+  ogImage: 'https://andrealfian420.github.io/og.jpg',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: () => t('meta_title'),
+  twitterCard: 'summary_large_image',
 });
 </script>
