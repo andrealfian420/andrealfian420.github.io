@@ -14,9 +14,9 @@
 
       <p class="hero-body">
         {{ t('hero_desc_1') }}
-        <strong class="hero-strong">(Laravel/Node)</strong>
+        <strong class="hero-strong">(Laravel / Express)</strong>
         {{ t('hero_desc_2') }}
-        <strong class="hero-strong">(Vue/Next)</strong>.
+        <strong class="hero-strong">(Vue / Next.js)</strong>.
       </p>
 
       <div class="hero-ctas">

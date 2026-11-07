@@ -2,14 +2,14 @@
   "meta_title": "Alfian Andre Ramadhan — Fullstack Web Developer",
   "meta_desc": "Portfolio of Alfian Andre Ramadhan, a Jakarta-based fullstack web developer building production systems with Laravel, Vue, Next.js, TypeScript and Node.js.",
   "nav_about": "About",
+  "nav_experience": "Experience",
   "nav_stack": "Tech Stack",
   "nav_portfolio": "Portfolio",
   "btn_contact": "Contact Me",
   "theme_toggle": "Toggle dark mode",
-  "hero_greeting": "Hi, I'm Alfian Andre Ramadhan.",
+  "hero_greeting": "Hi, I'm Alfian Andre Ramadhan, a fullstack web developer in Jakarta.",
   "hero_title_1": "I architect web systems from",
   "hero_concept": "concept",
-  "hero_prefix": "",
   "hero_to": "to",
   "hero_production": "production",
   "hero_desc_1": "For me, coding is the art of combining secure backend logic",
@@ -76,9 +76,37 @@
   },
   "btn_visit": "Visit Site",
   "stack_title": "Selected Technologies",
-  "stack_desc": "Best-in-class tools for performance, security, and scalability.",
-  "stack_laravel_title": "Laravel Ecosystem",
+  "stack_desc": "The tools behind the projects above.",
+  "stack_laravel_title": "Laravel & PHP",
   "stack_laravel_desc": "Specializing in building secure and maintainable enterprise-scale applications (Monolith).",
-  "stack_js_title": "JS & Universal Apps",
-  "stack_js_desc": "Building modern interactive interfaces (SPA) and cross-platform applications for Web & Mobile."
+  "stack_js_title": "TypeScript & Node.js",
+  "stack_js_desc": "Building interactive frontends and Node.js APIs with TypeScript.",
+  "stack_infra_title": "Infra & Integrations",
+  "experience_title": "Experience",
+  "experience_desc": "5+ years building production web systems.",
+  "experience_education_label": "Education",
+  "experience_education": "STMIK Bani Saleh Bekasi · B.Sc. Information Systems · 2017–2021",
+  "experience": {
+    "totalit": {
+      "period": "May 2022 – Present",
+      "roles": ["Web Developer · Jakarta"],
+      "points": [
+        "Built and maintained production systems for government institutions, healthcare organizations, digital libraries and e-learning platforms",
+        "Designed REST APIs and integrated third-party services: payment gateways, transactional email, OTP and video streaming",
+        "Led the Forte platform from scratch and set up CI/CD deployment pipelines",
+        "Worked with designers, PMs and engineers on features, performance and production issues"
+      ]
+    },
+    "umrotix": {
+      "period": "Mar 2020 – Nov 2021",
+      "roles": [
+        "Web Developer · Dec 2020 – Nov 2021",
+        "Junior Web Developer · Mar – May 2020"
+      ],
+      "points": [
+        "Built the company blog and shipped new features together with the CTO",
+        "Fixed bugs and maintained the main website and blog (PHP, CodeIgniter, jQuery)"
+      ]
+    }
+  }
 }

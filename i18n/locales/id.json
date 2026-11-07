@@ -2,13 +2,13 @@
   "meta_title": "Alfian Andre Ramadhan — Fullstack Web Developer",
   "meta_desc": "Portofolio Alfian Andre Ramadhan, fullstack web developer di Jakarta yang membangun sistem production dengan Laravel, Vue, Next.js, TypeScript, dan Node.js.",
   "nav_about": "Tentang",
+  "nav_experience": "Pengalaman",
   "nav_stack": "Tech Stack",
   "nav_portfolio": "Portofolio",
   "btn_contact": "Hubungi Saya",
   "theme_toggle": "Ganti mode gelap",
-  "hero_greeting": "Hai, Saya Alfian Andre Ramadhan.",
-  "hero_title_1": "Saya merancang sistem web",
-  "hero_prefix": "dari ",
+  "hero_greeting": "Hai, saya Alfian Andre Ramadhan, fullstack web developer di Jakarta.",
+  "hero_title_1": "Merancang sistem web dari",
   "hero_concept": "konsep",
   "hero_to": "hingga",
   "hero_production": "produksi",
@@ -76,9 +76,37 @@
   },
   "btn_visit": "Kunjungi Situs",
   "stack_title": "Teknologi Pilihan",
-  "stack_desc": "Alat terbaik di kelasnya untuk performa, keamanan, dan skalabilitas.",
-  "stack_laravel_title": "Ekosistem Laravel",
+  "stack_desc": "Teknologi di balik proyek-proyek di atas.",
+  "stack_laravel_title": "Laravel & PHP",
   "stack_laravel_desc": "Spesialis dalam membangun aplikasi skala enterprise yang aman dan mudah dikelola (Monolith).",
-  "stack_js_title": "Aplikasi JS & Universal",
-  "stack_js_desc": "Membangun antarmuka interaktif modern (SPA) dan aplikasi lintas platform untuk Web & Mobile."
+  "stack_js_title": "TypeScript & Node.js",
+  "stack_js_desc": "Membangun frontend interaktif dan API Node.js dengan TypeScript.",
+  "stack_infra_title": "Infra & Integrasi",
+  "experience_title": "Pengalaman",
+  "experience_desc": "5+ tahun membangun sistem web production.",
+  "experience_education_label": "Pendidikan",
+  "experience_education": "STMIK Bani Saleh Bekasi · S1 Sistem Informasi · 2017–2021",
+  "experience": {
+    "totalit": {
+      "period": "Mei 2022 – Sekarang",
+      "roles": ["Web Developer · Jakarta"],
+      "points": [
+        "Membangun dan memelihara sistem production untuk instansi pemerintah, organisasi kesehatan, perpustakaan digital, dan platform e-learning",
+        "Merancang REST API dan mengintegrasikan layanan pihak ketiga: payment gateway, email transaksional, OTP, dan video streaming",
+        "Memimpin pengembangan platform Forte dari nol dan menyiapkan pipeline deployment CI/CD",
+        "Bekerja sama dengan desainer, PM, dan engineer dalam pengembangan fitur, performa, dan penanganan masalah production"
+      ]
+    },
+    "umrotix": {
+      "period": "Mar 2020 – Nov 2021",
+      "roles": [
+        "Web Developer · Des 2020 – Nov 2021",
+        "Junior Web Developer · Mar – Mei 2020"
+      ],
+      "points": [
+        "Membangun blog perusahaan dan merilis fitur baru bersama CTO",
+        "Memperbaiki bug serta memelihara website utama dan blog (PHP, CodeIgniter, jQuery)"
+      ]
+    }
+  }
 }

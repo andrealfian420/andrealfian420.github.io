@@ -12,12 +12,7 @@
           <h3 class="stack-col-title">{{ t('stack_laravel_title') }}</h3>
           <p class="stack-col-desc">{{ t('stack_laravel_desc') }}</p>
           <div class="tech-tags">
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">Laravel Framework</span>
-            <span class="tech-tag">Inertia.js</span>
-            <span class="tech-tag">jQuery</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">PostgreSQL</span>
+            <span v-for="tag in phpTags" :key="tag" class="tech-tag">{{ tag }}</span>
           </div>
         </div>
 
@@ -27,15 +22,15 @@
           <h3 class="stack-col-title">{{ t('stack_js_title') }}</h3>
           <p class="stack-col-desc">{{ t('stack_js_desc') }}</p>
           <div class="tech-tags">
-            <span class="tech-tag">Vue.js</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Redis</span>
-            <span class="tech-tag">Express</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">PostgreSQL</span>
+            <span v-for="tag in jsTags" :key="tag" class="tech-tag">{{ tag }}</span>
           </div>
+        </div>
+      </div>
+
+      <div class="stack-infra">
+        <h3 class="stack-col-title">{{ t('stack_infra_title') }}</h3>
+        <div class="tech-tags">
+          <span v-for="tag in infraTags" :key="tag" class="tech-tag">{{ tag }}</span>
         </div>
       </div>
     </div>
@@ -44,13 +39,22 @@
 
 <script setup>
 const { t } = useI18n();
+
+const phpTags = ['PHP', 'Laravel', 'CodeIgniter', 'Inertia.js', 'jQuery', 'MySQL', 'PostgreSQL'];
+const jsTags = ['TypeScript', 'Next.js', 'React', 'Vue.js', 'Nuxt', 'Node.js', 'Express', 'Prisma', 'Redis'];
+const infraTags = ['Docker', 'Bitbucket Pipelines', 'GitHub Actions', 'BullMQ', 'PM2', 'Xendit', 'Cloudflare Stream'];
 </script>
 
 <style scoped>
 .stack-section {
   padding: var(--space-20) var(--space-6);
-  border-bottom: 1px solid var(--color-rule);
   background-color: var(--color-paper-2);
+}
+
+.stack-infra {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-rule);
 }
 
 .stack-inner {

@@ -3,8 +3,9 @@
     <AppHeader />
     <main>
       <SectionAbout />
-      <SectionStack />
+      <SectionExperience />
       <SectionProjects />
+      <SectionStack />
     </main>
 
     <AppFooter />

@@ -7,8 +7,9 @@
 
       <nav class="site-nav hidden md:flex">
         <a href="#about" class="nav-link">{{ t('nav_about') }}</a>
-        <a href="#stack" class="nav-link">{{ t('nav_stack') }}</a>
+        <a href="#experience" class="nav-link">{{ t('nav_experience') }}</a>
         <a href="#projects" class="nav-link">{{ t('nav_portfolio') }}</a>
+        <a href="#stack" class="nav-link">{{ t('nav_stack') }}</a>
       </nav>
 
       <div class="header-end">
