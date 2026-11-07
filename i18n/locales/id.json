@@ -116,8 +116,9 @@
       "period": "Mei 2022 – Sekarang",
       "roles": ["Web Developer · Jakarta"],
       "points": [
-        "Membangun dan memelihara sistem production untuk instansi pemerintah, organisasi kesehatan, perpustakaan digital, dan platform e-learning",
+        "Membangun dan memelihara sistem production untuk instansi pemerintah, organisasi internasional, kesehatan, perpustakaan digital, e-learning, dan platform event",
         "Merancang REST API dan mengintegrasikan layanan pihak ketiga: payment gateway, email transaksional, OTP, dan video streaming",
+        "Memodernisasi codebase Laravel lama, termasuk upgrade dari 5.5 ke 10 dan dari 8 ke 11",
         "Memimpin pengembangan platform Forte dari nol dan menyiapkan pipeline deployment CI/CD",
         "Bekerja sama dengan desainer, PM, dan engineer dalam pengembangan fitur, performa, dan penanganan masalah production"
       ]

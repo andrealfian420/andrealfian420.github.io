@@ -40,9 +40,9 @@
 <script setup>
 const { t } = useI18n();
 
-const phpTags = ['PHP', 'Laravel', 'CodeIgniter', 'Inertia.js', 'jQuery', 'MySQL', 'PostgreSQL'];
-const jsTags = ['TypeScript', 'Next.js', 'React', 'Vue.js', 'Nuxt', 'Node.js', 'Express', 'Prisma', 'Redis'];
-const infraTags = ['Docker', 'Bitbucket Pipelines', 'GitHub Actions', 'BullMQ', 'PM2', 'Xendit', 'Cloudflare Stream'];
+const phpTags = ['PHP', 'Laravel', 'CodeIgniter', 'Inertia.js', 'jQuery', 'Bootstrap', 'MySQL', 'PostgreSQL'];
+const jsTags = ['TypeScript', 'Next.js', 'React', 'Vue.js', 'Nuxt', 'Tailwind CSS', 'Node.js', 'Express', 'Prisma', 'Redis'];
+const infraTags = ['Docker', 'Bitbucket Pipelines', 'GitHub Actions', 'BullMQ', 'PM2', 'Xendit', 'Midtrans', 'Cloudflare Stream'];
 </script>
 
 <style scoped>

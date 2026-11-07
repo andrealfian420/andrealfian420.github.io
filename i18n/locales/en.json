@@ -116,8 +116,9 @@
       "period": "May 2022 – Present",
       "roles": ["Web Developer · Jakarta"],
       "points": [
-        "Built and maintained production systems for government institutions, healthcare organizations, digital libraries and e-learning platforms",
+        "Built and maintained production systems for government institutions, international organizations, healthcare, digital libraries, e-learning and event platforms",
         "Designed REST APIs and integrated third-party services: payment gateways, transactional email, OTP and video streaming",
+        "Modernized legacy Laravel codebases, including upgrades from 5.5 to 10 and from 8 to 11",
         "Led the Forte platform from scratch and set up CI/CD deployment pipelines",
         "Worked with designers, PMs and engineers on features, performance and production issues"
       ]
