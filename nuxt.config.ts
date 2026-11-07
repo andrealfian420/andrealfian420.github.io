@@ -20,9 +20,10 @@ export default defineNuxtConfig({
   i18n: {
     strategy: 'prefix_except_default',
     defaultLocale: 'en',
+    baseUrl: 'https://andrealfian420.github.io',
     locales: [
-      { code: 'en', name: 'English', file: 'en.json' },
-      { code: 'id', name: 'Indonesia', file: 'id.json' },
+      { code: 'en', language: 'en', name: 'English', file: 'en.json' },
+      { code: 'id', language: 'id', name: 'Indonesia', file: 'id.json' },
     ],
     lazy: true,
     detectBrowserLanguage: false,
