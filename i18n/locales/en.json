@@ -18,7 +18,6 @@
   "btn_lets_connect": "Let's Connect",
   "projects_title": "Featured Projects",
   "projects_desc": "Production systems I've built or helped build, from event platforms to assessment products.",
-  "projects_earlier": "Earlier projects",
   "projects_key_work": "Key work ({count})",
   "projects": {
     "forte": {
@@ -64,11 +63,37 @@
         "Ongoing maintenance and client change requests since 2024"
       ]
     },
-    "sinau": {
-      "desc": "A digital education platform (LMS) designed for medical guidance and residency preparation. Integrates private video streaming and learning evaluation systems based on quizzes and tryouts."
-    },
     "festivia": {
-      "desc": "Event management system application to manage registration, payments, merchandise purchases, and event tickets digitally."
+      "meta": "Fullstack Developer · 2023–2026 · team of 5",
+      "desc": "Event marketplace for Indonesia: organizers list events and sell tickets and merchandise; attendees discover events by city, buy tickets and check in with QR codes.",
+      "features": [
+        "Upgraded the codebase step by step from Laravel 5.5 / PHP 7.0 to Laravel 10 / PHP 8.1",
+        "Event builder with ticket types, seat maps, custom checkout fields and private events",
+        "Organizer payouts through Xendit sub-accounts, with withdrawal quotas and bank-account approval",
+        "Merchandise store with variants, promo codes and an approval flow",
+        "Venue check-in with QR scanning, re-registration and BIB numbers for races"
+      ]
+    },
+    "sinau": {
+      "meta": "Fullstack Developer · 2023–2025 · team of 5",
+      "desc": "Online learning platform for medical students and doctors: UKMPPD tutoring, residency (PPDS) preparation, webinars, recorded lessons and tryouts.",
+      "features": [
+        "End-to-end checkout with Midtrans, promo codes and per-product registration forms",
+        "Question bank with Excel import, tryouts and pre/post-tests with automatic grading",
+        "Time-limited and lifetime access to recorded lessons",
+        "Upgraded the codebase from Laravel 8 to Laravel 11 (PHP 8.2)",
+        "Admin reports and Excel exports for participants, transactions and test results"
+      ]
+    },
+    "eria": {
+      "meta": "Fullstack Developer · 2023–2024 · team of 3",
+      "desc": "Website and CMS for ERIA's Regional Knowledge Centre for Marine Plastic Debris: publications, country regulations, events and a private-sector platform.",
+      "features": [
+        "Built the admin CMS and most public pages from the first commit",
+        "Custom rich-text editor on Tiptap, plus a block-based flexible page builder",
+        "Interactive SVG country map and site-wide search across 11 content types",
+        "Private-sector platform: company registration, product submission, admin approval and email notifications"
+      ]
     },
     "epic": {
       "desc": "Housing management system for the EPIC group. Features include resident management, dues payment, complaint reporting, and guest tracking for residential areas."

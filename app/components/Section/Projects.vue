@@ -7,76 +7,70 @@
       </header>
       <hr class="section-rule" aria-hidden="true" />
 
-      <template v-for="group in groups" :key="group.key">
-        <h3 v-if="group.title" class="projects-subtitle">{{ group.title }}</h3>
-        <div
-          class="projects-grid"
-          :class="{ 'projects-grid--compact': !group.featured }"
+      <div class="projects-grid">
+        <article
+          v-for="project in projects"
+          :key="project.slug"
+          class="project-card"
         >
-          <article
-            v-for="project in group.items"
-            :key="project.slug"
-            class="project-card"
-          >
-            <div class="project-image">
-              <NuxtImg
-                :src="project.img"
-                :alt="project.title + ' screenshot'"
-                width="640"
-                height="360"
-                loading="lazy"
-                class="project-img"
-              />
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span
-                  v-for="stack in project.stack"
-                  :key="stack"
-                  class="project-tag"
-                  :class="getTagClass(stack)"
-                >
-                  {{ stack }}
-                </span>
-              </div>
-              <h3 class="project-title">{{ project.title }}</h3>
-              <p v-if="project.featured" class="project-meta">
-                {{ t(`projects.${project.slug}.meta`) }}
-              </p>
-              <p class="project-desc">
-                {{ t(`projects.${project.slug}.desc`) }}
-              </p>
-              <details v-if="project.featured" class="project-details">
-                <summary>
-                  {{
-                    t('projects_key_work', {
-                      count: tm(`projects.${project.slug}.features`).length,
-                    })
-                  }}
-                </summary>
-                <ul class="project-features">
-                  <li
-                    v-for="(feature, i) in tm(
-                      `projects.${project.slug}.features`,
-                    )"
-                    :key="i"
-                  >
-                    {{ rt(feature) }}
-                  </li>
-                </ul>
-              </details>
-              <a
-                :href="project.url"
-                target="_blank"
-                rel="noopener"
-                class="project-link"
+          <div class="project-image">
+            <NuxtImg
+              :src="project.img"
+              :alt="project.title + ' screenshot'"
+              width="640"
+              height="360"
+              loading="lazy"
+              class="project-img"
+            />
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span
+                v-for="stack in project.stack"
+                :key="stack"
+                class="project-tag"
+                :class="getTagClass(stack)"
               >
-                {{ t('btn_visit') }} →
-              </a>
+                {{ stack }}
+              </span>
             </div>
-          </article>
-        </div>
-      </template>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p v-if="project.featured" class="project-meta">
+              {{ t(`projects.${project.slug}.meta`) }}
+            </p>
+            <p class="project-desc">
+              {{ t(`projects.${project.slug}.desc`) }}
+            </p>
+            <details v-if="project.featured" class="project-details">
+              <summary>
+                {{
+                  t('projects_key_work', {
+                    count: tm(`projects.${project.slug}.features`).length,
+                  })
+                }}
+              </summary>
+              <ul class="project-features">
+                <li
+                  v-for="(feature, i) in tm(
+                    `projects.${project.slug}.features`,
+                  )"
+                  :key="i"
+                >
+                  {{ rt(feature) }}
+                </li>
+              </ul>
+            </details>
+            <a
+              :href="project.url"
+              target="_blank"
+              rel="noopener"
+              class="project-link"
+            >
+              {{ t('btn_visit') }} →
+            </a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </template>
@@ -101,13 +95,15 @@ const getTagClass = (name) => {
     )
   )
     return 'tag--data';
-  if (['firebase', 'xendit', 'cloudflare'].some((k) => n.includes(k)))
+  if (
+    ['firebase', 'xendit', 'midtrans', 'cloudflare'].some((k) => n.includes(k))
+  )
     return 'tag--service';
   return '';
 };
 
 // Text (meta, desc, features) lives in i18n under `projects.<slug>`.
-// Featured projects have meta + features; earlier ones only desc.
+// Featured projects have meta + features; others only desc.
 const projects = [
   {
     slug: 'forte',
@@ -142,18 +138,28 @@ const projects = [
     featured: true,
   },
   {
-    slug: 'sinau',
-    title: 'Sinauyuk!',
-    img: '/img/sinau.webp',
-    stack: ['Laravel', 'Vue 2', 'Bootstrap 5'],
-    url: 'https://sinauyuk.id',
-  },
-  {
     slug: 'festivia',
     title: 'Festivia',
     img: '/img/festivia.webp',
-    stack: ['Laravel', 'Bootstrap 5', 'jQuery'],
+    stack: ['Laravel', 'jQuery', 'Bootstrap', 'Xendit', 'Midtrans'],
     url: 'https://festivia.id',
+    featured: true,
+  },
+  {
+    slug: 'sinau',
+    title: 'Sinauyuk!',
+    img: '/img/sinau.webp',
+    stack: ['Laravel', 'Vue 2', 'Vuetify', 'Bootstrap 5', 'Midtrans'],
+    url: 'https://sinauyuk.id',
+    featured: true,
+  },
+  {
+    slug: 'eria',
+    title: 'ERIA RKC-MPD',
+    img: '/img/eria.webp',
+    stack: ['Laravel', 'Inertia.js', 'Vue 3', 'Tailwind', 'Tiptap'],
+    url: 'https://rkcmpd-eria.org',
+    featured: true,
   },
   {
     slug: 'epic',
@@ -163,19 +169,6 @@ const projects = [
     url: 'https://epicestate.web.id',
   },
 ];
-
-const groups = computed(() => [
-  {
-    key: 'featured',
-    featured: true,
-    items: projects.filter((p) => p.featured),
-  },
-  {
-    key: 'earlier',
-    title: t('projects_earlier'),
-    items: projects.filter((p) => !p.featured),
-  },
-]);
 </script>
 
 <style scoped>
@@ -188,35 +181,21 @@ const groups = computed(() => [
   margin: 0 auto;
 }
 
-.projects-subtitle {
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--color-ink);
-  margin: var(--space-16) 0 var(--space-6);
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
 }
 
-@media (min-width: 768px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* Opening "Key work" on one card must not stretch its row neighbour. */
-.projects-grid:not(.projects-grid--compact) {
+/* Closed cards share row height; once "Key work" is open, stop stretching
+   so the open card doesn't leave a tall empty neighbour. */
+.projects-grid:has(details[open]) {
   align-items: start;
 }
 
-@media (min-width: 1024px) {
-  .projects-grid--compact {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

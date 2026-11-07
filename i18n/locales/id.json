@@ -18,7 +18,6 @@
   "btn_lets_connect": "Ngobrol Dulu",
   "projects_title": "Proyek Unggulan",
   "projects_desc": "Sistem production yang saya bangun atau ikut bangun, dari platform event hingga produk asesmen.",
-  "projects_earlier": "Proyek sebelumnya",
   "projects_key_work": "Kontribusi utama ({count})",
   "projects": {
     "forte": {
@@ -64,11 +63,37 @@
         "Maintenance berkelanjutan dan change request klien sejak 2024"
       ]
     },
-    "sinau": {
-      "desc": "Platform pendidikan digital (LMS) untuk bimbingan kedokteran dan persiapan residensi. Mengintegrasikan streaming video privat dan sistem evaluasi belajar berbasis kuis dan tryout."
-    },
     "festivia": {
-      "desc": "Aplikasi sistem manajemen event untuk mengelola pendaftaran, pembayaran, pembelian merchandise, dan tiket event secara digital."
+      "meta": "Fullstack Developer · 2023–2026 · tim 5 orang",
+      "desc": "Marketplace event untuk seluruh Indonesia: organizer membuat event serta menjual tiket dan merchandise; peserta mencari event per kota, membeli tiket, dan check-in dengan QR code.",
+      "features": [
+        "Upgrade codebase bertahap dari Laravel 5.5 / PHP 7.0 ke Laravel 10 / PHP 8.1",
+        "Event builder dengan tipe tiket, seat map, field checkout kustom, dan event privat",
+        "Pencairan dana organizer lewat sub-account Xendit, dengan kuota penarikan dan persetujuan rekening bank",
+        "Toko merchandise dengan varian, kode promo, dan alur persetujuan",
+        "Check-in di venue dengan scan QR, registrasi ulang, dan nomor BIB untuk lomba lari"
+      ]
+    },
+    "sinau": {
+      "meta": "Fullstack Developer · 2023–2025 · tim 5 orang",
+      "desc": "Platform belajar online untuk mahasiswa kedokteran dan dokter: bimbingan UKMPPD, persiapan PPDS, webinar, video rekaman, dan tryout.",
+      "features": [
+        "Checkout end-to-end dengan Midtrans, kode promo, dan form registrasi per produk",
+        "Bank soal dengan import Excel, tryout, serta pre/post-test dengan penilaian otomatis",
+        "Akses video rekaman berbatas waktu maupun seumur hidup",
+        "Upgrade codebase dari Laravel 8 ke Laravel 11 (PHP 8.2)",
+        "Laporan admin dan export Excel untuk peserta, transaksi, dan hasil tes"
+      ]
+    },
+    "eria": {
+      "meta": "Fullstack Developer · 2023–2024 · tim 3 orang",
+      "desc": "Website dan CMS untuk Regional Knowledge Centre for Marine Plastic Debris milik ERIA: publikasi, regulasi per negara, event, dan platform sektor swasta.",
+      "features": [
+        "Membangun CMS admin dan sebagian besar halaman publik sejak commit pertama",
+        "Rich-text editor kustom berbasis Tiptap, plus page builder fleksibel berbasis blok",
+        "Peta negara SVG interaktif dan pencarian di 11 jenis konten",
+        "Platform sektor swasta: registrasi perusahaan, submit produk, persetujuan admin, dan notifikasi email"
+      ]
     },
     "epic": {
       "desc": "Sistem manajemen perumahan untuk grup EPIC. Fitur mencakup manajemen warga, pembayaran iuran, pelaporan keluhan, dan pelacakan tamu untuk area perumahan."
