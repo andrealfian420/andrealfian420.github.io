@@ -17,11 +17,63 @@
   "btn_view_work": "View My Work",
   "btn_lets_connect": "Let's Connect",
   "projects_title": "Featured Projects",
-  "projects_desc": "Several fullstack projects I have delivered using industry standards.",
-  "project_sinau_desc": "A digital education platform (LMS) designed for medical guidance and residency preparation. Integrates private video streaming and learning evaluation systems based on quizzes and tryouts.",
-  "project_festivia_desc": "Event management system application to manage registration, payments, merchandise purchases, and event tickets digitally.",
-  "project_isicam_desc": "Integrated event management system covering registration, ticketing, payments, and medical abstract grading for seminar participants.",
-  "project_epic_desc": "Housing management system for the EPIC group. Features include resident management, dues payment, complaint reporting, and guest tracking for residential areas.",
+  "projects_desc": "Production systems I've built or helped build, from event platforms to assessment products.",
+  "projects_earlier": "Earlier projects",
+  "projects_key_work": "Key work ({count})",
+  "projects": {
+    "forte": {
+      "meta": "Lead Developer · 2026–now · team of 3",
+      "desc": "People-assessment platform for hiring, team building and personal growth. Candidates take timed assessments and receive a scored profile; organizations manage members and results.",
+      "features": [
+        "Architected the Express + Prisma API and the Next.js 16 frontend from the first commit",
+        "Resumable assessment sittings with offline answer sync and single-device takeover",
+        "Server-side scoring engine running on background jobs (BullMQ, outbox, dead-letter queue)",
+        "Bilingual CMS, organization management, OTP and Google sign-in, role-based access",
+        "Redis-backed rate limiting, refresh-token rotation, CI/CD to VPS via Bitbucket Pipelines"
+      ]
+    },
+    "medexpo": {
+      "meta": "Fullstack Developer · 2026 · team of 5",
+      "desc": "Next-generation medical event platform. Attendees buy full packages or single sessions; organizers manage participants, payments, badges and accommodation from one portal.",
+      "features": [
+        "Configurable registration forms per registration type, with OTP confirmation and resumable drafts",
+        "Admin dashboard on live data, including per-night hotel room quotas",
+        "Hotel booking flows for personal and sponsored participants",
+        "Scheduler that releases seats from expired invoices, plus waitlist seat assignment",
+        "International bank transfers and IDR reconciliation for USD orders, covered by PHPUnit tests"
+      ]
+    },
+    "isicam": {
+      "meta": "Fullstack Developer · 2024–2026 · team of 5",
+      "desc": "Registration and event platform for Indonesia's largest interventional cardiology congress, running three annual editions: ticketing, payments, abstracts, hotels and the scientific program.",
+      "features": [
+        "Abstract submission with video upload to Cloudflare Stream",
+        "Multi-currency payments (IDR/USD) through Xendit, including sponsor group invoices",
+        "Hotel booking with add-ons and a room-quota dashboard",
+        "REST API for the companion mobile app (tickets, schedule, posters, payments)",
+        "Email delivery moved to ZeptoMail; security hardening across the app"
+      ]
+    },
+    "wahanahonda": {
+      "meta": "Web Developer · 2024–now · main maintainer",
+      "desc": "Official website and admin panel for Honda's main motorcycle dealer in Jakarta and Tangerang: catalogue, price lists, credit simulation, and test-ride and promo leads.",
+      "features": [
+        "Catalogue features: EV specifications, variant images per price, model comparison",
+        "Moved the SMS OTP provider across all lead forms",
+        "Security hardening: input sanitization, signed resource IDs, rate limiting, security headers",
+        "Ongoing maintenance and client change requests since 2024"
+      ]
+    },
+    "sinau": {
+      "desc": "A digital education platform (LMS) designed for medical guidance and residency preparation. Integrates private video streaming and learning evaluation systems based on quizzes and tryouts."
+    },
+    "festivia": {
+      "desc": "Event management system application to manage registration, payments, merchandise purchases, and event tickets digitally."
+    },
+    "epic": {
+      "desc": "Housing management system for the EPIC group. Features include resident management, dues payment, complaint reporting, and guest tracking for residential areas."
+    }
+  },
   "btn_visit": "Visit Site",
   "stack_title": "Selected Technologies",
   "stack_desc": "Best-in-class tools for performance, security, and scalability.",

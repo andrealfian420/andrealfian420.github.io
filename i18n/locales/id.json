@@ -17,11 +17,63 @@
   "btn_view_work": "Lihat Hasil Kerja",
   "btn_lets_connect": "Ngobrol Dulu",
   "projects_title": "Proyek Unggulan",
-  "projects_desc": "Beberapa proyek fullstack yang telah saya kerjakan menggunakan standar industri.",
-  "project_sinau_desc": "Platform pendidikan digital (LMS) untuk bimbingan kedokteran dan persiapan residensi. Mengintegrasikan streaming video privat dan sistem evaluasi belajar berbasis kuis dan tryout.",
-  "project_festivia_desc": "Aplikasi sistem manajemen event untuk mengelola pendaftaran, pembayaran, pembelian merchandise, dan tiket event secara digital.",
-  "project_isicam_desc": "Sistem manajemen event kedokteran terintegrasi yang mencakup pendaftaran, tiket, pembayaran, dan penilaian abstrak medis untuk peserta seminar.",
-  "project_epic_desc": "Sistem manajemen perumahan untuk grup EPIC. Fitur mencakup manajemen warga, pembayaran iuran, pelaporan keluhan, dan pelacakan tamu untuk area perumahan.",
+  "projects_desc": "Sistem production yang saya bangun atau ikut bangun, dari platform event hingga produk asesmen.",
+  "projects_earlier": "Proyek sebelumnya",
+  "projects_key_work": "Kontribusi utama ({count})",
+  "projects": {
+    "forte": {
+      "meta": "Lead Developer · 2026–sekarang · tim 3 orang",
+      "desc": "Platform asesmen SDM untuk rekrutmen, pengembangan tim, dan pengembangan diri. Kandidat mengerjakan asesmen berwaktu dan mendapat profil hasil skoring; organisasi mengelola anggota dan hasilnya.",
+      "features": [
+        "Merancang arsitektur API Express + Prisma dan frontend Next.js 16 sejak commit pertama",
+        "Sesi asesmen yang bisa dilanjutkan, dengan sinkronisasi jawaban offline dan kunci satu perangkat",
+        "Scoring engine di sisi server yang berjalan sebagai background job (BullMQ, outbox, dead-letter queue)",
+        "CMS dwibahasa, manajemen organisasi, login OTP dan Google, serta hak akses berbasis role",
+        "Rate limiting berbasis Redis, rotasi refresh token, dan CI/CD ke VPS lewat Bitbucket Pipelines"
+      ]
+    },
+    "medexpo": {
+      "meta": "Fullstack Developer · 2026 · tim 5 orang",
+      "desc": "Platform event medis generasi baru. Peserta membeli paket lengkap atau sesi satuan; penyelenggara mengelola peserta, pembayaran, badge, dan akomodasi dari satu portal.",
+      "features": [
+        "Form registrasi yang bisa dikonfigurasi per tipe registrasi, dengan konfirmasi OTP dan draft yang bisa dilanjutkan",
+        "Dashboard admin berbasis data live, termasuk kuota kamar hotel per malam",
+        "Alur booking hotel untuk peserta personal dan peserta sponsor",
+        "Scheduler yang melepas kursi dari invoice kedaluwarsa, plus penempatan kursi dari waitlist",
+        "Transfer bank internasional dan rekonsiliasi Rupiah untuk order USD, dilengkapi tes PHPUnit"
+      ]
+    },
+    "isicam": {
+      "meta": "Fullstack Developer · 2024–2026 · tim 5 orang",
+      "desc": "Platform registrasi dan event untuk kongres kardiologi intervensi terbesar di Indonesia, dipakai tiga edisi tahunan: tiket, pembayaran, abstrak, hotel, dan program ilmiah.",
+      "features": [
+        "Submisi abstrak dengan upload video ke Cloudflare Stream",
+        "Pembayaran multi-mata uang (IDR/USD) lewat Xendit, termasuk invoice grup sponsor",
+        "Booking hotel dengan add-on dan dashboard kuota kamar",
+        "REST API untuk aplikasi mobile pendamping (tiket, jadwal, poster, pembayaran)",
+        "Pengiriman email dipindah ke ZeptoMail; security hardening di seluruh aplikasi"
+      ]
+    },
+    "wahanahonda": {
+      "meta": "Web Developer · 2024–sekarang · maintainer utama",
+      "desc": "Website resmi dan panel admin main dealer motor Honda untuk Jakarta dan Tangerang: katalog, daftar harga, simulasi kredit, serta lead test ride dan promo.",
+      "features": [
+        "Fitur katalog: spesifikasi motor listrik, gambar varian per harga, perbandingan model",
+        "Migrasi provider SMS OTP di seluruh form lead",
+        "Security hardening: sanitasi input, ID resource yang ditandatangani, rate limiting, security header",
+        "Maintenance berkelanjutan dan change request klien sejak 2024"
+      ]
+    },
+    "sinau": {
+      "desc": "Platform pendidikan digital (LMS) untuk bimbingan kedokteran dan persiapan residensi. Mengintegrasikan streaming video privat dan sistem evaluasi belajar berbasis kuis dan tryout."
+    },
+    "festivia": {
+      "desc": "Aplikasi sistem manajemen event untuk mengelola pendaftaran, pembayaran, pembelian merchandise, dan tiket event secara digital."
+    },
+    "epic": {
+      "desc": "Sistem manajemen perumahan untuk grup EPIC. Fitur mencakup manajemen warga, pembayaran iuran, pelaporan keluhan, dan pelacakan tamu untuk area perumahan."
+    }
+  },
   "btn_visit": "Kunjungi Situs",
   "stack_title": "Teknologi Pilihan",
   "stack_desc": "Alat terbaik di kelasnya untuk performa, keamanan, dan skalabilitas.",

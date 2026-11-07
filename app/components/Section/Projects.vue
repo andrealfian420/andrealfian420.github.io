@@ -7,90 +7,173 @@
       </header>
       <hr class="section-rule" aria-hidden="true" />
 
-      <div class="projects-grid">
-        <article
-          v-for="(project, index) in projects"
-          :key="index"
-          class="project-card"
+      <template v-for="group in groups" :key="group.key">
+        <h3 v-if="group.title" class="projects-subtitle">{{ group.title }}</h3>
+        <div
+          class="projects-grid"
+          :class="{ 'projects-grid--compact': !group.featured }"
         >
-          <div class="project-image">
-            <NuxtImg
-              :src="project.img"
-              :alt="project.title + ' screenshot'"
-              class="project-img"
-            />
-          </div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span
-                v-for="(stack, stackIndex) in project.stack"
-                :key="stackIndex"
-                class="project-tag"
-                :class="getTagClass(stack)"
-              >
-                {{ stack }}
-              </span>
+          <article
+            v-for="project in group.items"
+            :key="project.slug"
+            class="project-card"
+          >
+            <div class="project-image">
+              <NuxtImg
+                :src="project.img"
+                :alt="project.title + ' screenshot'"
+                width="640"
+                height="360"
+                loading="lazy"
+                class="project-img"
+              />
             </div>
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-desc">{{ project.desc }}</p>
-            <a
-              :href="project.url"
-              target="_blank"
-              rel="noopener"
-              class="project-link"
-            >
-              {{ t('btn_visit') }} →
-            </a>
-          </div>
-        </article>
-      </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span
+                  v-for="stack in project.stack"
+                  :key="stack"
+                  class="project-tag"
+                  :class="getTagClass(stack)"
+                >
+                  {{ stack }}
+                </span>
+              </div>
+              <h3 class="project-title">{{ project.title }}</h3>
+              <p v-if="project.featured" class="project-meta">
+                {{ t(`projects.${project.slug}.meta`) }}
+              </p>
+              <p class="project-desc">
+                {{ t(`projects.${project.slug}.desc`) }}
+              </p>
+              <details v-if="project.featured" class="project-details">
+                <summary>
+                  {{
+                    t('projects_key_work', {
+                      count: tm(`projects.${project.slug}.features`).length,
+                    })
+                  }}
+                </summary>
+                <ul class="project-features">
+                  <li
+                    v-for="(feature, i) in tm(
+                      `projects.${project.slug}.features`,
+                    )"
+                    :key="i"
+                  >
+                    {{ rt(feature) }}
+                  </li>
+                </ul>
+              </details>
+              <a
+                :href="project.url"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+              >
+                {{ t('btn_visit') }} →
+              </a>
+            </div>
+          </article>
+        </div>
+      </template>
     </div>
   </section>
 </template>
 
 <script setup>
-const { t } = useI18n();
+const { t, tm, rt } = useI18n();
 
 const getTagClass = (name) => {
   const n = name.toLowerCase();
-  if (n.includes('laravel') || n.includes('php')) return 'tag--backend';
-  if (n.includes('vue') || n.includes('nuxt') || n.includes('node'))
+  if (n.includes('laravel') || n.includes('php') || n.includes('codeigniter'))
+    return 'tag--backend';
+  if (
+    ['vue', 'nuxt', 'node', 'next', 'express', 'inertia', 'typescript'].some(
+      (k) => n.includes(k),
+    )
+  )
     return 'tag--frontend';
   if (n.includes('bootstrap') || n.includes('tailwind')) return 'tag--css';
-  if (n.includes('mysql') || n.includes('postgresql') || n.includes('jquery'))
+  if (
+    ['mysql', 'postgresql', 'jquery', 'prisma', 'redis'].some((k) =>
+      n.includes(k),
+    )
+  )
     return 'tag--data';
-  if (n.includes('firebase')) return 'tag--service';
+  if (['firebase', 'xendit', 'cloudflare'].some((k) => n.includes(k)))
+    return 'tag--service';
   return '';
 };
 
-const projects = computed(() => [
+// Text (meta, desc, features) lives in i18n under `projects.<slug>`.
+// Featured projects have meta + features; earlier ones only desc.
+const projects = [
   {
+    slug: 'forte',
+    title: 'Forte',
+    img: '/img/forte.webp',
+    stack: ['Next.js', 'TypeScript', 'Express', 'PostgreSQL', 'Prisma', 'Redis'],
+    url: 'https://goforte.id',
+    featured: true,
+  },
+  {
+    slug: 'medexpo',
+    title: 'Med Expo',
+    img: '/img/medexpo.webp',
+    stack: ['Laravel', 'Vue 3', 'Inertia.js', 'Tailwind', 'Xendit'],
+    url: 'https://medexpo.totalit.co.id',
+    featured: true,
+  },
+  {
+    slug: 'isicam',
+    title: 'ISICAM',
+    img: '/img/isicam.webp',
+    stack: ['Laravel', 'Bootstrap 5', 'jQuery', 'Xendit', 'Cloudflare Stream'],
+    url: 'https://isicam.id',
+    featured: true,
+  },
+  {
+    slug: 'wahanahonda',
+    title: 'Wahana Honda',
+    img: '/img/wahanahonda.webp',
+    stack: ['CodeIgniter 4', 'PHP', 'Bootstrap', 'jQuery'],
+    url: 'https://www.wahanahonda.com',
+    featured: true,
+  },
+  {
+    slug: 'sinau',
     title: 'Sinauyuk!',
-    desc: t('project_sinau_desc'),
     img: '/img/sinau.webp',
     stack: ['Laravel', 'Vue 2', 'Bootstrap 5'],
     url: 'https://sinauyuk.id',
   },
   {
+    slug: 'festivia',
     title: 'Festivia',
-    desc: t('project_festivia_desc'),
     img: '/img/festivia.webp',
     stack: ['Laravel', 'Bootstrap 5', 'jQuery'],
     url: 'https://festivia.id',
   },
   {
-    title: 'Isicam',
-    desc: t('project_isicam_desc'),
-    img: '/img/isicam.webp',
-    stack: ['Laravel', 'Bootstrap 5', 'jQuery'],
-    url: 'https://isicam.id',
-  },
-  {
+    slug: 'epic',
     title: 'Epic Estate',
-    desc: t('project_epic_desc'),
     img: '/img/epic.webp',
     stack: ['Laravel', 'Bootstrap 5', 'jQuery', 'Firebase'],
     url: 'https://epicestate.web.id',
+  },
+];
+
+const groups = computed(() => [
+  {
+    key: 'featured',
+    featured: true,
+    items: projects.filter((p) => p.featured),
+  },
+  {
+    key: 'earlier',
+    title: t('projects_earlier'),
+    items: projects.filter((p) => !p.featured),
   },
 ]);
 </script>
@@ -105,36 +188,13 @@ const projects = computed(() => [
   margin: 0 auto;
 }
 
-.section-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  margin-bottom: var(--space-5);
-}
-
-.section-title {
+.projects-subtitle {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-ink);
-  margin: 0;
-}
-
-.section-desc {
-  font-size: var(--text-sm);
-  color: var(--color-ink-muted);
-  margin: 0;
-  max-width: 42ch;
-  text-align: right;
-}
-
-.section-rule {
-  border: none;
-  border-top: 1px solid var(--color-rule);
-  margin: 0 0 var(--space-12);
+  margin: var(--space-16) 0 var(--space-6);
 }
 
 .projects-grid {
@@ -143,14 +203,19 @@ const projects = computed(() => [
   gap: var(--space-6);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+/* Opening "Key work" on one card must not stretch its row neighbour. */
+.projects-grid:not(.projects-grid--compact) {
+  align-items: start;
+}
+
 @media (min-width: 1024px) {
-  .projects-grid {
+  .projects-grid--compact {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -162,7 +227,6 @@ const projects = computed(() => [
   display: flex;
   flex-direction: column;
   background-color: var(--color-paper);
-  will-change: transform;
   transition:
     border-color var(--dur-normal) var(--ease-out),
     transform var(--dur-normal) var(--ease-out);
@@ -184,6 +248,7 @@ const projects = computed(() => [
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   display: block;
   opacity: 0.9;
   transition:
@@ -266,12 +331,83 @@ const projects = computed(() => [
   letter-spacing: -0.01em;
 }
 
+.project-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  margin: 0 0 var(--space-3);
+  letter-spacing: 0.01em;
+}
+
 .project-desc {
   font-size: var(--text-sm);
   color: var(--color-ink-muted);
   line-height: 1.6;
   margin: 0 0 var(--space-5);
-  flex: 1;
+}
+
+.project-details {
+  margin: 0 0 var(--space-5);
+}
+
+.project-details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-ink);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.project-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-details summary::before {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1.5px solid var(--color-accent);
+  border-bottom: 1.5px solid var(--color-accent);
+  transform: rotate(-45deg);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.project-details[open] summary::before {
+  transform: rotate(45deg);
+}
+
+.project-details summary:hover {
+  color: var(--color-accent);
+}
+
+.project-features {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.project-features li {
+  position: relative;
+  padding-left: var(--space-4);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--color-ink-muted);
+}
+
+.project-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 1px;
+  background-color: var(--color-accent);
 }
 
 .project-link {
@@ -286,11 +422,5 @@ const projects = computed(() => [
 
 .project-link:hover {
   opacity: 0.72;
-}
-
-@media (max-width: 640px) {
-  .section-desc {
-    text-align: left;
-  }
 }
 </style>
