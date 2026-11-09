@@ -63,6 +63,27 @@
         "Maintenance berkelanjutan dan change request klien sejak 2024"
       ]
     },
+    "inahrsregistry": {
+      "meta": "Fullstack Developer · 2026 · tim 6 orang",
+      "desc": "Portal member dan registry kasus aritmia untuk Indonesian Heart Rhythm Society: dokter mendaftar dan membayar keanggotaan, lalu mengirim kasus ablasi, CIED, dan AF untuk diverifikasi admin.",
+      "features": [
+        "Menyiapkan core dari boilerplate internal dan build production",
+        "Registrasi member, persetujuan admin, dan perpanjangan keanggotaan, dengan pembayaran Xendit dan email pengingat",
+        "Middleware yang membatasi portal hanya untuk member dengan keanggotaan aktif",
+        "REST API untuk auth, profil, registry, event, dan forum",
+        "Export Excel dan catatan reviewer untuk kasus registry"
+      ]
+    },
+    "inahrs": {
+      "meta": "Fullstack Developer · 2023–2026 · kontributor utama",
+      "desc": "Website publik dan CMS admin Indonesian Heart Rhythm Society: direktori anggota, pertemuan dan event, program pelatihan, guideline, dan publikasi.",
+      "features": [
+        "Membangun direktori anggota untuk dokter dan tenaga kesehatan allied, lengkap dengan pendidikan, jabatan, dan riwayat kerja",
+        "Upgrade codebase bertahap dari Laravel 8 / PHP 7.3 ke Laravel 11 / PHP 8.2",
+        "Memimpin redesign homepage 2026 dan memperbarui halaman detail berita, publikasi, pelatihan, dan fellowship",
+        "JSON API publik untuk guideline, media, dan publikasi"
+      ]
+    },
     "festivia": {
       "meta": "Fullstack Developer · 2023–2026 · tim 5 orang",
       "desc": "Marketplace event untuk seluruh Indonesia: organizer membuat event serta menjual tiket dan merchandise; peserta mencari event per kota, membeli tiket, dan check-in dengan QR code.",

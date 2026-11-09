@@ -122,6 +122,14 @@ const projects = [
     featured: true,
   },
   {
+    slug: 'inahrsregistry',
+    title: 'InaHRS Registry',
+    img: '/img/inahrsregistry.webp',
+    stack: ['Laravel', 'Inertia.js', 'Vue 3', 'Tailwind', 'Xendit'],
+    url: 'https://inahrsregistry.totalit.co.id',
+    featured: true,
+  },
+  {
     slug: 'isicam',
     title: 'ISICAM',
     img: '/img/isicam.webp',
@@ -135,6 +143,14 @@ const projects = [
     img: '/img/wahanahonda.webp',
     stack: ['CodeIgniter 4', 'PHP', 'Bootstrap', 'jQuery'],
     url: 'https://www.wahanahonda.com',
+    featured: true,
+  },
+  {
+    slug: 'inahrs',
+    title: 'InaHRS',
+    img: '/img/inahrs.webp',
+    stack: ['Laravel', 'Vue 2', 'Vuetify', 'Highcharts'],
+    url: 'https://inahrs.or.id',
     featured: true,
   },
   {
