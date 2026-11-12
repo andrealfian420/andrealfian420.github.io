@@ -6,7 +6,7 @@ export const works = [
   {
     slug: 'forte',
     title: 'Forte',
-    img: '/img/forte.webp',
+    img: '/img/forte/home.webp',
     url: 'https://goforte.id',
     lead: 2,
     section: {
@@ -19,7 +19,7 @@ export const works = [
   {
     slug: 'medexpo',
     title: 'Med Expo',
-    img: '/img/medexpo.webp',
+    img: '/img/medexpo/dashboard.webp',
     url: 'https://medexpo.totalit.co.id',
     lead: 3,
     section: {
@@ -31,7 +31,7 @@ export const works = [
   {
     slug: 'inahrsregistry',
     title: 'InaHRS Registry',
-    img: '/img/inahrsregistry.webp',
+    img: '/img/inahrsregistry/dashboard.webp',
     url: 'https://inahrsregistry.totalit.co.id',
     lead: 1,
     section: {
@@ -43,7 +43,7 @@ export const works = [
   {
     slug: 'isicam',
     title: 'ISICAM',
-    img: '/img/isicam.webp',
+    img: '/img/isicam/home.webp',
     url: 'https://isicam.id',
     lead: 1,
     section: {
@@ -55,7 +55,7 @@ export const works = [
   {
     slug: 'wahanahonda',
     title: 'Wahana Honda',
-    img: '/img/wahanahonda.webp',
+    img: '/img/wahanahonda/home.webp',
     url: 'https://www.wahanahonda.com',
     lead: 3,
     section: {
@@ -66,7 +66,7 @@ export const works = [
   {
     slug: 'inahrs',
     title: 'InaHRS',
-    img: '/img/inahrs.webp',
+    img: '/img/inahrs/home.webp',
     url: 'https://inahrs.or.id',
     lead: 1,
     section: {
@@ -77,7 +77,7 @@ export const works = [
   {
     slug: 'festivia',
     title: 'Festivia',
-    img: '/img/festivia.webp',
+    img: '/img/festivia/home.webp',
     url: 'https://festivia.id',
     lead: 0,
     section: {
@@ -89,7 +89,7 @@ export const works = [
   {
     slug: 'sinau',
     title: 'Sinauyuk!',
-    img: '/img/sinau.webp',
+    img: '/img/sinau/home.webp',
     url: 'https://sinauyuk.id',
     lead: 1,
     section: {
@@ -101,7 +101,7 @@ export const works = [
   {
     slug: 'eria',
     title: 'ERIA RKC-MPD',
-    img: '/img/eria.webp',
+    img: '/img/eria/home.webp',
     url: 'https://rkcmpd-eria.org',
     lead: 1,
     section: {
