@@ -175,7 +175,7 @@ const changeLang = (newLocale) => {
   color: var(--color-ink-muted);
   background: transparent;
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition:
     color var(--dur-fast) var(--ease-out),
@@ -184,13 +184,13 @@ const changeLang = (newLocale) => {
 
 .lang-btn:hover {
   color: var(--color-ink);
-  background-color: var(--color-paper-3);
+  background-color: var(--color-paper-2);
 }
 
 .flag-wrap {
   width: 1.375rem;
   height: 0.9375rem;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   flex-shrink: 0;
   outline: 1px solid color-mix(in oklch, var(--color-ink) 12%, transparent);
@@ -200,7 +200,6 @@ const changeLang = (newLocale) => {
   width: 0.875rem;
   height: 0.875rem;
   color: var(--color-ink-subtle);
-  transition: transform var(--dur-fast) var(--ease-out);
 }
 
 .lang-dropdown {
@@ -210,10 +209,9 @@ const changeLang = (newLocale) => {
   z-index: 50;
   min-width: 9rem;
   background-color: var(--color-paper);
-  border: 1px solid var(--color-rule);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--color-rule-strong);
+  border-radius: var(--radius);
   padding: var(--space-1) 0;
-  box-shadow: 0 4px 16px color-mix(in oklch, var(--color-ink) 8%, transparent);
 }
 
 .lang-option {

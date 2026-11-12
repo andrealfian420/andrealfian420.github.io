@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 @variant dark (&:where(.dark, .dark *));
 
-/* Hallmark · macrostructure: Marquee Hero · tone: technical · anchor hue: teal
- * genre: modern-minimal · theme: custom (vibe: "precise developer craft, quiet confidence")
- * paper: oklch(98.5% 0.003 240) · accent: oklch(60% 0.14 196) teal
- * display: Space Grotesk · body: Inter
- * Pre-emit critique: P4 H5 E5 S4 R5 V4 */
+/* World: "Release Notes", a tech-company changelog of his own practice.
+ * White page, near-black ink, slate secondary, hairline rules, one warm
+ * orange for the primary action, date markers and link hover.
+ * One grotesk with tabular dates. 8px radius, 1px hairlines, no shadows,
+ * no gradients, no glass. */
 
 html,
 body {
@@ -13,27 +13,29 @@ body {
 }
 
 :root {
-  /* Color tokens */
-  --color-paper: oklch(98.5% 0.003 240);
-  --color-paper-2: oklch(96% 0.006 240);
-  --color-paper-3: oklch(92% 0.008 240);
-  --color-ink: oklch(13% 0.02 245);
-  --color-ink-muted: oklch(48% 0.012 245);
-  --color-ink-subtle: oklch(72% 0.008 245);
-  --color-accent: oklch(58% 0.15 196);
-  --color-accent-bg: oklch(97% 0.025 196);
-  --color-rule: oklch(86% 0.006 240);
-  --color-focus: oklch(58% 0.15 196);
+  --color-paper: oklch(100% 0 0);
+  --color-paper-2: oklch(97.6% 0.002 250);
+  --color-ink: oklch(17.5% 0.01 255);
+  --color-ink-muted: oklch(45% 0.014 255);
+  --color-ink-subtle: oklch(55% 0.012 255);
+  --color-rule: oklch(92.5% 0.005 255);
+  --color-rule-strong: oklch(85% 0.007 255);
 
-  /* Font tokens */
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  /* 54% keeps white button text above 4.5:1 */
+  --color-accent: oklch(54% 0.19 40);
+  --color-accent-hover: oklch(48% 0.17 38);
+  --color-on-accent: oklch(100% 0 0);
 
-  /* Type scale */
-  --text-display: clamp(3rem, 7vw, 5.5rem);
-  --text-display-s: clamp(1.8rem, 4vw, 2.75rem);
+  --color-focus: var(--color-accent);
+
+  --font-sans: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+  --text-display: clamp(3.25rem, 8vw, 6rem);
+  --text-title: clamp(2rem, 3.6vw, 2.75rem);
+  --text-lead: clamp(1.375rem, 2.2vw, 1.875rem);
+  --text-entry: clamp(1.5rem, 2.4vw, 1.875rem);
   --text-xl: 1.25rem;
+  --text-lg: 1.125rem;
   --text-base: 1rem;
   --text-sm: 0.875rem;
   --text-xs: 0.75rem;
@@ -53,64 +55,58 @@ body {
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Motion */
+  --page-max: 76rem;
+  --page-pad: clamp(1rem, 4vw, 4rem);
+  --rail-w: 11rem;
+  --header-h: 3.5rem;
+  --radius: 8px;
+  --radius-sm: 6px;
+
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
-  --dur-fast: 100ms;
-  --dur-normal: 200ms;
-  --dur-slow: 350ms;
-
-  /* Radius */
-  --radius-sm: 3px;
-  --radius-md: 6px;
-  --radius-lg: 10px;
-
-  /* Tech category tokens */
-  --color-tech-backend: oklch(52% 0.14 22); /* Laravel / PHP */
-  --color-tech-backend-bg: oklch(97% 0.02 22);
-  --color-tech-frontend: oklch(48% 0.12 145); /* Vue / Node */
-  --color-tech-frontend-bg: oklch(97% 0.02 145);
-  --color-tech-css: oklch(50% 0.12 292); /* Bootstrap / Tailwind */
-  --color-tech-css-bg: oklch(97% 0.02 292);
-  --color-tech-data: oklch(48% 0.11 230); /* MySQL / PostgreSQL / jQuery */
-  --color-tech-data-bg: oklch(97% 0.02 230);
-  --color-tech-service: oklch(56% 0.13 52); /* Firebase */
-  --color-tech-service-bg: oklch(97% 0.02 52);
+  --dur-fast: 120ms;
 }
 
 .dark {
-  --color-paper: oklch(11% 0.015 245);
-  --color-paper-2: oklch(15.5% 0.018 245);
-  --color-paper-3: oklch(20% 0.02 245);
-  --color-ink: oklch(95% 0.005 245);
-  --color-ink-muted: oklch(62% 0.012 245);
-  --color-ink-subtle: oklch(38% 0.012 245);
-  --color-accent: oklch(68% 0.17 196);
-  --color-accent-bg: oklch(18% 0.04 196);
-  --color-rule: oklch(20% 0.015 245);
-  --color-focus: oklch(68% 0.17 196);
+  --color-paper: oklch(14.5% 0.004 255);
+  --color-paper-2: oklch(18.5% 0.005 255);
+  --color-ink: oklch(94% 0.003 255);
+  --color-ink-muted: oklch(76% 0.008 255);
+  --color-ink-subtle: oklch(66% 0.01 255);
+  --color-rule: oklch(25% 0.006 255);
+  --color-rule-strong: oklch(33% 0.008 255);
 
-  /* Tech category tokens — dark overrides */
-  --color-tech-backend: oklch(72% 0.15 22);
-  --color-tech-backend-bg: oklch(20% 0.06 22);
-  --color-tech-frontend: oklch(68% 0.13 145);
-  --color-tech-frontend-bg: oklch(20% 0.05 145);
-  --color-tech-css: oklch(70% 0.12 292);
-  --color-tech-css-bg: oklch(20% 0.05 292);
-  --color-tech-data: oklch(68% 0.12 230);
-  --color-tech-data-bg: oklch(20% 0.05 230);
-  --color-tech-service: oklch(72% 0.14 52);
-  --color-tech-service-bg: oklch(20% 0.06 52);
+  --color-accent: oklch(70% 0.17 45);
+  --color-accent-hover: oklch(76% 0.15 48);
+  --color-on-accent: oklch(16% 0.02 45);
+}
+
+html {
+  scrollbar-color: var(--color-rule-strong) var(--color-paper);
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-body);
-  line-height: 1.65;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
 }
 
 :focus-visible {
@@ -120,54 +116,104 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
   *,
   *::before,
   *::after {
-    transition-duration: 150ms !important;
-    animation-duration: 150ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-/* Nav anchors: land below the sticky header (3.5rem + 1px border). */
-main section[id] {
-  scroll-margin-top: calc(3.5rem + 1px);
+/* Nav anchors land below the sticky header (+1px rule). */
+main section[id],
+main article[id] {
+  scroll-margin-top: calc(var(--header-h) + 1px);
 }
 
-/* Shared section heading (Experience, Projects, Stack) */
+.page-frame {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+}
+
+/* Shared section heading: title with a short note, over a hairline. */
 .section-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  margin-bottom: var(--space-5);
+  display: grid;
+  grid-template-columns: var(--rail-w) minmax(0, 1fr);
+  column-gap: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-rule);
+  margin-bottom: var(--space-8);
 }
 
 .section-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  grid-column: 1 / -1;
+  font-size: var(--text-title);
   font-weight: 700;
-  letter-spacing: -0.025em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--color-ink);
   margin: 0;
 }
 
 .section-desc {
-  font-size: var(--text-sm);
+  grid-column: 1 / -1;
+  margin: var(--space-3) 0 0;
+  font-size: var(--text-lg);
   color: var(--color-ink-muted);
-  margin: 0;
-  max-width: 42ch;
-  text-align: right;
+  max-width: 52ch;
+  text-wrap: pretty;
 }
 
-.section-rule {
-  border: none;
-  border-top: 1px solid var(--color-rule);
-  margin: 0 0 var(--space-12);
-}
-
-@media (max-width: 640px) {
-  .section-desc {
-    text-align: left;
+@media (max-width: 767px) {
+  .section-header {
+    grid-template-columns: minmax(0, 1fr);
   }
+
+  .section-title,
+  .section-desc {
+    grid-column: 1;
+  }
+}
+
+/* Primary action */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* Quiet text link */
+.link-quiet {
+  color: var(--color-ink);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--color-rule-strong);
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    text-decoration-color var(--dur-fast) var(--ease-out);
+}
+
+.link-quiet:hover {
+  color: var(--color-accent);
+  text-decoration-color: currentColor;
+}
+
+.figures {
+  font-variant-numeric: tabular-nums;
 }

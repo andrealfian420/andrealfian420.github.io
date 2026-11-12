@@ -1,421 +1,274 @@
 <template>
-  <section id="projects" class="projects-section">
-    <div class="projects-inner">
+  <section id="works" class="works">
+    <div class="page-frame">
       <header class="section-header">
         <h2 class="section-title">{{ t('projects_title') }}</h2>
-        <p class="section-desc">{{ t('projects_desc') }}</p>
       </header>
-      <hr class="section-rule" aria-hidden="true" />
 
-      <div class="projects-grid">
-        <article
-          v-for="project in projects"
-          :key="project.slug"
-          class="project-card"
-        >
-          <div class="project-image">
-            <NuxtImg
-              :src="project.img"
-              :alt="project.title + ' screenshot'"
-              width="640"
-              height="360"
-              loading="lazy"
-              class="project-img"
-            />
-          </div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span
-                v-for="stack in project.stack"
-                :key="stack"
-                class="project-tag"
-                :class="getTagClass(stack)"
-              >
-                {{ stack }}
-              </span>
-            </div>
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p v-if="project.featured" class="project-meta">
-              {{ t(`projects.${project.slug}.meta`) }}
+      <div v-for="group in groups" :key="group.key" class="year-group">
+        <div class="rail">
+          <p class="year figures">
+            {{ group.key === 'other' ? t('year_other') : group.key }}
+          </p>
+        </div>
+
+        <div class="entries">
+          <article
+            v-for="work in group.works"
+            :id="`work-${work.slug}`"
+            :key="work.slug"
+            class="entry"
+          >
+            <header class="entry-head">
+              <h3 class="entry-title">{{ work.title }}</h3>
+              <p class="entry-meta figures">
+                <span>{{ t(`projects.${work.slug}.sector`) }}</span>
+                <template v-if="meta(work)">
+                  <span v-for="part in meta(work)" :key="part">{{ part }}</span>
+                </template>
+              </p>
+            </header>
+
+            <p v-if="te(`projects.${work.slug}.note`)" class="entry-note">
+              {{ t(`projects.${work.slug}.note`) }}
             </p>
-            <p class="project-desc">
-              {{ t(`projects.${project.slug}.desc`) }}
-            </p>
-            <details v-if="project.featured" class="project-details">
-              <summary>
-                {{
-                  t('projects_key_work', {
-                    count: tm(`projects.${project.slug}.features`).length,
-                  })
-                }}
-              </summary>
-              <ul class="project-features">
-                <li
-                  v-for="(feature, i) in tm(
-                    `projects.${project.slug}.features`,
-                  )"
-                  :key="i"
-                >
-                  {{ rt(feature) }}
+            <p class="entry-desc">{{ t(`projects.${work.slug}.desc`) }}</p>
+
+            <figure class="entry-shot">
+              <NuxtImg
+                :src="work.img"
+                :alt="`${work.title} screenshot`"
+                width="1920"
+                height="1080"
+                sizes="xs:100vw md:768px"
+                loading="lazy"
+                class="entry-img"
+              />
+            </figure>
+
+            <template v-if="features(work).length">
+              <h4 class="entry-label">{{ t('shipped') }}</h4>
+              <ul class="shipped">
+                <li v-for="(feature, j) in features(work)" :key="j">
+                  {{ feature }}
                 </li>
               </ul>
-            </details>
+            </template>
+
+            <p class="built-with">
+              <span class="entry-label">{{ t('built_with') }}</span>
+              <span>{{ stack(work) }}</span>
+            </p>
+
             <a
-              :href="project.url"
+              :href="work.url"
               target="_blank"
               rel="noopener"
-              class="project-link"
+              class="link-quiet entry-visit"
             >
-              {{ t('btn_visit') }} →
+              {{ workHost(work.url) }} <UIArrow />
             </a>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-const { t, tm, rt } = useI18n();
+const { t, te, tm, rt } = useI18n();
 
-const getTagClass = (name) => {
-  const n = name.toLowerCase();
-  if (n.includes('laravel') || n.includes('php') || n.includes('codeigniter'))
-    return 'tag--backend';
-  if (
-    ['vue', 'nuxt', 'node', 'next', 'express', 'inertia', 'typescript'].some(
-      (k) => n.includes(k),
-    )
-  )
-    return 'tag--frontend';
-  if (n.includes('bootstrap') || n.includes('tailwind')) return 'tag--css';
-  if (
-    ['mysql', 'postgresql', 'jquery', 'prisma', 'redis'].some((k) =>
-      n.includes(k),
-    )
-  )
-    return 'tag--data';
-  if (
-    ['firebase', 'xendit', 'midtrans', 'cloudflare'].some((k) => n.includes(k))
-  )
-    return 'tag--service';
-  return '';
+// "role · period · team" from i18n; EPIC has none.
+const meta = (work) =>
+  te(`projects.${work.slug}.meta`)
+    ? t(`projects.${work.slug}.meta`).split(' · ')
+    : null;
+
+// tm() returns the key string when a work has no features (EPIC).
+const features = (work) => {
+  const list = tm(`projects.${work.slug}.features`);
+  return Array.isArray(list) ? list.map((f) => rt(f)) : [];
 };
 
-// Text (meta, desc, features) lives in i18n under `projects.<slug>`.
-// Featured projects have meta + features; others only desc.
-const projects = [
-  {
-    slug: 'forte',
-    title: 'Forte',
-    img: '/img/forte.webp',
-    stack: ['Next.js', 'TypeScript', 'Express', 'PostgreSQL', 'Prisma', 'Redis'],
-    url: 'https://goforte.id',
-    featured: true,
-  },
-  {
-    slug: 'medexpo',
-    title: 'Med Expo',
-    img: '/img/medexpo.webp',
-    stack: ['Laravel', 'Vue 3', 'Inertia.js', 'Tailwind', 'Xendit'],
-    url: 'https://medexpo.totalit.co.id',
-    featured: true,
-  },
-  {
-    slug: 'inahrsregistry',
-    title: 'InaHRS Registry',
-    img: '/img/inahrsregistry.webp',
-    stack: ['Laravel', 'Inertia.js', 'Vue 3', 'Tailwind', 'Xendit'],
-    url: 'https://inahrsregistry.totalit.co.id',
-    featured: true,
-  },
-  {
-    slug: 'isicam',
-    title: 'ISICAM',
-    img: '/img/isicam.webp',
-    stack: ['Laravel', 'Bootstrap 5', 'jQuery', 'Xendit', 'Cloudflare Stream'],
-    url: 'https://isicam.id',
-    featured: true,
-  },
-  {
-    slug: 'wahanahonda',
-    title: 'Wahana Honda',
-    img: '/img/wahanahonda.webp',
-    stack: ['CodeIgniter 4', 'PHP', 'Bootstrap', 'jQuery'],
-    url: 'https://www.wahanahonda.com',
-    featured: true,
-  },
-  {
-    slug: 'inahrs',
-    title: 'InaHRS',
-    img: '/img/inahrs.webp',
-    stack: ['Laravel', 'Vue 2', 'Vuetify', 'Highcharts'],
-    url: 'https://inahrs.or.id',
-    featured: true,
-  },
-  {
-    slug: 'festivia',
-    title: 'Festivia',
-    img: '/img/festivia.webp',
-    stack: ['Laravel', 'jQuery', 'Bootstrap', 'Xendit', 'Midtrans'],
-    url: 'https://festivia.id',
-    featured: true,
-  },
-  {
-    slug: 'sinau',
-    title: 'Sinauyuk!',
-    img: '/img/sinau.webp',
-    stack: ['Laravel', 'Vue 2', 'Vuetify', 'Bootstrap 5', 'Midtrans'],
-    url: 'https://sinauyuk.id',
-    featured: true,
-  },
-  {
-    slug: 'eria',
-    title: 'ERIA RKC-MPD',
-    img: '/img/eria.webp',
-    stack: ['Laravel', 'Inertia.js', 'Vue 3', 'Tailwind', 'Tiptap'],
-    url: 'https://rkcmpd-eria.org',
-    featured: true,
-  },
-  {
-    slug: 'epic',
-    title: 'Epic Estate',
-    img: '/img/epic.webp',
-    stack: ['Laravel', 'Bootstrap 5', 'jQuery', 'Firebase'],
-    url: 'https://epicestate.web.id',
-  },
-];
+const stack = (work) => Object.values(work.section).flat().join(' · ');
+
+// Newest first, grouped by the year each work started; undated works last.
+const startYear = (work) => meta(work)?.[1].match(/\d{4}/)[0] ?? 'other';
+
+const groups = computed(() => {
+  const byYear = new Map();
+  for (const work of works) {
+    const year = startYear(work);
+    if (!byYear.has(year)) byYear.set(year, []);
+    byYear.get(year).push(work);
+  }
+  return [...byYear.entries()]
+    .sort(([a], [b]) => (a === 'other' ? 1 : b === 'other' ? -1 : b - a))
+    .map(([key, list]) => ({ key, works: list }));
+});
 </script>
 
 <style scoped>
-.projects-section {
-  padding: var(--space-20) var(--space-6) var(--space-24);
+.works {
+  padding: var(--space-12) 0 var(--space-24);
+  border-top: 1px solid var(--color-rule);
 }
 
-.projects-inner {
-  max-width: 72rem;
-  margin: 0 auto;
-}
-
-.projects-grid {
+.year-group {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
+  grid-template-columns: var(--rail-w) minmax(0, 1fr);
+  column-gap: var(--space-8);
 }
 
-/* Closed cards share row height; once "Key work" is open, stop stretching
-   so the open card doesn't leave a tall empty neighbour. */
-.projects-grid:has(details[open]) {
-  align-items: start;
+.year-group + .year-group {
+  border-top: 1px solid var(--color-rule);
+  padding-top: var(--space-12);
 }
 
-@media (min-width: 768px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+/* Signature: the year stays pinned while its releases scroll past. */
+.year {
+  position: sticky;
+  top: calc(var(--header-h) + var(--space-6));
+  margin: 0;
+  font-size: var(--text-entry);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-accent);
 }
 
-.project-card {
-  border: 1px solid var(--color-rule);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+.entries {
+  min-width: 0;
+}
+
+.entry {
+  max-width: 48rem;
+  padding-bottom: var(--space-16);
+}
+
+.entry + .entry {
+  border-top: 1px solid var(--color-rule);
+  padding-top: var(--space-12);
+}
+
+.entry-title {
+  margin: 0;
+  font-size: var(--text-entry);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-ink);
+}
+
+.entry-meta {
+  margin: var(--space-2) 0 0;
   display: flex;
-  flex-direction: column;
-  background-color: var(--color-paper);
-  transition:
-    border-color var(--dur-normal) var(--ease-out),
-    transform var(--dur-normal) var(--ease-out);
+  flex-wrap: wrap;
+  font-size: var(--text-sm);
+  color: var(--color-ink-subtle);
 }
 
-.project-card:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-3px);
+.entry-meta span + span::before {
+  content: '·';
+  margin: 0 var(--space-2);
 }
 
-.project-image {
+.entry-note {
+  margin: var(--space-6) 0 0;
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  max-width: 44ch;
+  text-wrap: pretty;
+}
+
+.entry-desc {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-ink-muted);
+  max-width: 64ch;
+  text-wrap: pretty;
+}
+
+.entry-shot {
+  margin: var(--space-8) 0 0;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background-color: var(--color-paper-3);
-  flex-shrink: 0;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius);
+  background-color: var(--color-paper-2);
 }
 
-.project-img {
+.entry-img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
-  display: block;
-  opacity: 0.9;
-  transition:
-    opacity var(--dur-slow) var(--ease-out),
-    transform var(--dur-slow) var(--ease-out);
 }
 
-.project-card:hover .project-img {
-  opacity: 1;
-  transform: scale(1.03);
-}
-
-.project-body {
-  padding: var(--space-5);
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-  margin-bottom: var(--space-3);
-}
-
-.project-tag {
-  font-size: 10px;
-  font-weight: 500;
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-ink-subtle);
-  background-color: var(--color-paper-3);
-  border: 1px solid var(--color-rule);
-  border-radius: var(--radius-sm);
-  padding: 0.2rem 0.5rem;
-}
-
-.tag--backend {
-  color: var(--color-tech-backend);
-  background-color: var(--color-tech-backend-bg);
-  border-color: color-mix(in oklch, var(--color-tech-backend) 20%, transparent);
-}
-
-.tag--frontend {
-  color: var(--color-tech-frontend);
-  background-color: var(--color-tech-frontend-bg);
-  border-color: color-mix(
-    in oklch,
-    var(--color-tech-frontend) 20%,
-    transparent
-  );
-}
-
-.tag--css {
-  color: var(--color-tech-css);
-  background-color: var(--color-tech-css-bg);
-  border-color: color-mix(in oklch, var(--color-tech-css) 20%, transparent);
-}
-
-.tag--data {
-  color: var(--color-tech-data);
-  background-color: var(--color-tech-data-bg);
-  border-color: color-mix(in oklch, var(--color-tech-data) 20%, transparent);
-}
-
-.tag--service {
-  color: var(--color-tech-service);
-  background-color: var(--color-tech-service-bg);
-  border-color: color-mix(in oklch, var(--color-tech-service) 20%, transparent);
-}
-
-.project-title {
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
+.entry-label {
+  margin: var(--space-8) 0 0;
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-ink);
-  margin: 0 0 var(--space-2);
-  letter-spacing: -0.01em;
 }
 
-.project-meta {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-accent);
-  margin: 0 0 var(--space-3);
-  letter-spacing: 0.01em;
-}
-
-.project-desc {
-  font-size: var(--text-sm);
-  color: var(--color-ink-muted);
-  line-height: 1.6;
-  margin: 0 0 var(--space-5);
-}
-
-.project-details {
-  margin: 0 0 var(--space-5);
-}
-
-.project-details summary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-ink);
-  cursor: pointer;
+.shipped {
   list-style: none;
-  user-select: none;
-}
-
-.project-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.project-details summary::before {
-  content: '';
-  width: 0.4rem;
-  height: 0.4rem;
-  border-right: 1.5px solid var(--color-accent);
-  border-bottom: 1.5px solid var(--color-accent);
-  transform: rotate(-45deg);
-  transition: transform var(--dur-fast) var(--ease-out);
-}
-
-.project-details[open] summary::before {
-  transform: rotate(45deg);
-}
-
-.project-details summary:hover {
-  color: var(--color-accent);
-}
-
-.project-features {
-  list-style: none;
-  padding: 0;
   margin: var(--space-3) 0 0;
-  display: grid;
-  gap: var(--space-2);
+  padding: 0;
 }
 
-.project-features li {
+.shipped li {
   position: relative;
-  padding-left: var(--space-4);
-  font-size: var(--text-sm);
+  padding: var(--space-1) 0 var(--space-1) var(--space-5);
+  font-size: var(--text-base);
   line-height: 1.55;
   color: var(--color-ink-muted);
 }
 
-.project-features li::before {
+.shipped li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 0.6em;
-  width: 6px;
+  top: 0.95em;
+  width: 0.5rem;
   height: 1px;
-  background-color: var(--color-accent);
+  background-color: var(--color-ink-subtle);
 }
 
-.project-link {
+.built-with {
+  margin: var(--space-6) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
   font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-accent);
-  text-decoration: none;
-  margin-top: auto;
-  align-self: flex-start;
-  transition: opacity var(--dur-fast) var(--ease-out);
+  color: var(--color-ink-muted);
 }
 
-.project-link:hover {
-  opacity: 0.72;
+.built-with .entry-label {
+  margin: 0;
+}
+
+.entry-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 767px) {
+  .year-group {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .year {
+    position: static;
+    margin-bottom: var(--space-6);
+  }
 }
 </style>

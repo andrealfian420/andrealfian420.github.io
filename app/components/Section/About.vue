@@ -1,29 +1,29 @@
 <template>
-  <section id="about" class="hero-section">
-    <div class="hero-inner">
-      <p class="hero-label">{{ t('hero_greeting') }}</p>
-      <hr class="hero-rule" aria-hidden="true" />
+  <section id="about" class="hero">
+    <div class="page-frame">
+      <h1 class="name">Alfian Andre<br />Ramadhan</h1>
+      <p class="role">{{ t('hero_role') }}</p>
 
-      <h1 class="hero-headline">
-        {{ t('hero_title_1') }}<br />
-        <span class="hero-muted">{{ t('hero_concept') }}</span>
-        {{ t('hero_to') }}
-        <span class="hero-accent">{{ t('hero_production') }}</span
-        >.
-      </h1>
+      <p class="hook">{{ t('hero_hook') }}</p>
 
-      <p class="hero-body">
-        {{ t('hero_desc_1') }}
-        <strong class="hero-strong">(Laravel / Express)</strong>
-        {{ t('hero_desc_2') }}
-        <strong class="hero-strong">(Vue / Next.js)</strong>.
-      </p>
-
-      <div class="hero-ctas">
-        <a href="#projects" class="cta-primary">{{ t('btn_view_work') }} →</a>
-        <a href="mailto:andrealfian.work@gmail.com" class="cta-secondary">{{
-          t('btn_lets_connect')
-        }}</a>
+      <div class="actions">
+        <a href="mailto:andrealfian.work@gmail.com" class="btn-primary">
+          {{ t('btn_email') }} <UIArrow />
+        </a>
+        <a
+          href="https://linkedin.com/in/alfianandre"
+          target="_blank"
+          rel="noopener"
+          class="link-quiet"
+          >LinkedIn</a
+        >
+        <a
+          href="https://github.com/andrealfian420"
+          target="_blank"
+          rel="noopener"
+          class="link-quiet"
+          >GitHub</a
+        >
       </div>
     </div>
   </section>
@@ -34,105 +34,44 @@ const { t } = useI18n();
 </script>
 
 <style scoped>
-.hero-section {
-  padding: var(--space-24) var(--space-6) var(--space-20);
-  border-bottom: 1px solid var(--color-rule);
+.hero {
+  padding: clamp(3rem, 9vh, 6rem) 0 clamp(2.5rem, 7vh, 4.5rem);
 }
 
-.hero-inner {
-  max-width: 72rem;
-  margin: 0 auto;
-}
-
-.hero-label {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-ink-muted);
-  margin: 0 0 var(--space-4);
-  letter-spacing: 0.01em;
-}
-
-.hero-rule {
-  border: none;
-  border-top: 1px solid var(--color-rule);
-  margin: 0 0 var(--space-8);
-  width: 100%;
-}
-
-.hero-headline {
-  font-family: var(--font-display);
+.name {
+  margin: 0;
   font-size: var(--text-display);
   font-weight: 700;
-  line-height: 1.07;
-  letter-spacing: -0.03em;
-  color: var(--color-ink);
-  margin: 0 0 var(--space-8);
-  overflow-wrap: anywhere;
-  text-wrap: balance; /* avoid a lone "from" on its own line */
-  min-width: 0;
-  max-width: 20ch;
-}
-
-.hero-muted {
-  color: var(--color-ink-subtle);
-}
-
-.hero-accent {
-  color: var(--color-accent);
-}
-
-.hero-body {
-  font-size: var(--text-xl);
-  color: var(--color-ink-muted);
-  line-height: 1.6;
-  max-width: 52ch;
-  margin: 0 0 var(--space-10);
-}
-
-.hero-strong {
-  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
   color: var(--color-ink);
 }
 
-.hero-ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-6);
-  align-items: center;
-}
-
-.cta-primary {
-  font-size: var(--text-base);
-  font-weight: 600;
-  color: var(--color-accent);
-  text-decoration: none;
-  letter-spacing: -0.01em;
-  transition: opacity var(--dur-fast) var(--ease-out);
-}
-
-.cta-primary:hover {
-  opacity: 0.72;
-}
-
-.cta-secondary {
-  font-size: var(--text-base);
+.role {
+  margin: var(--space-5) 0 0;
+  font-size: var(--text-lg);
   font-weight: 500;
   color: var(--color-ink-muted);
-  text-decoration: none;
-  transition: color var(--dur-fast) var(--ease-out);
 }
 
-.cta-secondary:hover {
+.hook {
+  margin: var(--space-10) 0 0;
+  font-size: var(--text-lead);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
   color: var(--color-ink);
+  max-width: 32ch;
+  text-wrap: balance;
 }
 
-@media (max-width: 640px) {
-  .hero-section {
-    padding: var(--space-16) var(--space-6) var(--space-16);
-  }
 
-  .hero-headline {
-    max-width: none;
-  }
+.actions {
+  margin-top: var(--space-10);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
 }
+
 </style>

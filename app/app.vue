@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLoadingIndicator color="#2563eb" />
+    <NuxtLoadingIndicator color="var(--color-accent)" />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -12,7 +12,7 @@ const { t } = useI18n();
 const i18nHead = useLocaleHead();
 
 const FONTS_URL =
-  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap';
+  'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap';
 
 useHead(() => ({
   htmlAttrs: {

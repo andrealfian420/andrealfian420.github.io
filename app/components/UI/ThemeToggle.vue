@@ -62,7 +62,7 @@ const toggleTheme = () => {
   height: 2.125rem;
   background: transparent;
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   color: var(--color-ink-muted);
   cursor: pointer;
   transition:
@@ -72,7 +72,7 @@ const toggleTheme = () => {
 
 .theme-btn:hover {
   color: var(--color-ink);
-  background-color: var(--color-paper-3);
+  background-color: var(--color-paper-2);
 }
 
 .icon {

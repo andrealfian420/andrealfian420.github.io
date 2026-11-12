@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T08:34:18.112Z",
+  "title": "Design System: Alfian Andre Ramadhan, Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Release Orange",
+        "canonical": "oklch(54% 0.19 40)",
+        "tonalRamp": [
+          "oklch(15% 0.095 40)",
+          "oklch(27% 0.095 40)",
+          "oklch(39% 0.19 40)",
+          "oklch(51% 0.19 40)",
+          "oklch(63% 0.19 40)",
+          "oklch(76% 0.19 40)",
+          "oklch(88% 0.095 40)",
+          "oklch(95% 0.095 40)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Deep Release Orange",
+        "canonical": "oklch(48% 0.17 38)"
+      },
+      "on-accent": {
+        "role": "primary",
+        "displayName": "On Orange",
+        "canonical": "oklch(100% 0 0)"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(100% 0 0)"
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Paper Tint",
+        "canonical": "oklch(97.6% 0.002 250)"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(17.5% 0.01 255)",
+        "tonalRamp": [
+          "oklch(15% 0.006 255)",
+          "oklch(27% 0.006 255)",
+          "oklch(39% 0.012 255)",
+          "oklch(51% 0.012 255)",
+          "oklch(63% 0.012 255)",
+          "oklch(76% 0.012 255)",
+          "oklch(88% 0.006 255)",
+          "oklch(95% 0.006 255)"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "oklch(45% 0.014 255)"
+      },
+      "ink-subtle": {
+        "role": "neutral",
+        "displayName": "Pale Slate",
+        "canonical": "oklch(55% 0.012 255)"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(92.5% 0.005 255)"
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "oklch(85% 0.007 255)"
+      },
+      "accent-dark": {
+        "role": "primary",
+        "displayName": "Ember Orange",
+        "canonical": "oklch(70% 0.17 45)"
+      },
+      "accent-hover-dark": {
+        "role": "primary",
+        "displayName": "Ember Orange Hover",
+        "canonical": "oklch(76% 0.15 48)"
+      },
+      "on-accent-dark": {
+        "role": "primary",
+        "displayName": "On Ember",
+        "canonical": "oklch(16% 0.02 45)"
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "oklch(14.5% 0.004 255)"
+      },
+      "paper-2-dark": {
+        "role": "neutral",
+        "displayName": "Night Paper Tint",
+        "canonical": "oklch(18.5% 0.005 255)"
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "oklch(94% 0.003 255)"
+      },
+      "ink-muted-dark": {
+        "role": "neutral",
+        "displayName": "Night Slate",
+        "canonical": "oklch(76% 0.008 255)"
+      },
+      "ink-subtle-dark": {
+        "role": "neutral",
+        "displayName": "Night Pale Slate",
+        "canonical": "oklch(66% 0.01 255)"
+      },
+      "rule-dark": {
+        "role": "neutral",
+        "displayName": "Night Hairline",
+        "canonical": "oklch(25% 0.006 255)"
+      },
+      "rule-strong-dark": {
+        "role": "neutral",
+        "displayName": "Night Strong Hairline",
+        "canonical": "oklch(33% 0.008 255)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero name, two lines, once."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and the closing contact title."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The first-person pitch under the hero name."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Release titles and the sticky year markers."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "The first-person note on each release."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions and list points."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "In-entry sub-heads, rail labels, periods, nav, buttons on mobile header."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Dot-separated sector, role, period, team row; tabular figures."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Easing for hover colour changes, the only motion in the system."
+      },
+      {
+        "name": "dur-fast",
+        "value": "120ms",
+        "purpose": "Duration of every hover colour change."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs",
+        "value": "379px",
+        "purpose": "Header contact label shortens to \"Email\"."
+      },
+      {
+        "name": "md",
+        "value": "767px",
+        "purpose": "Rail collapses into the column; header nav hidden; contact becomes the orange button; year stops sticking."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled action: \"Email me\" in the hero and closing contact.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">Email me <svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M2 8h11M9 4l4 4-4 4\" stroke-linecap=\"square\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--color-accent); color: var(--color-on-accent); font-family: var(--font-sans); font-size: 1rem; font-weight: 600; text-decoration: none; padding: 0.75rem 1.25rem; border-radius: 8px; transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary svg { width: 1em; height: 1em; } .ds-btn-primary:hover { background: var(--color-accent-hover); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }"
+    },
+    {
+      "name": "Mobile Header Contact",
+      "kind": "button",
+      "refersTo": "header-contact-mobile",
+      "description": "The compact orange contact in the sticky header below 768px.",
+      "html": "<a href=\"#\" class=\"ds-contact-mobile\">Contact Me</a>",
+      "css": ".ds-contact-mobile { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 6px; white-space: nowrap; transition: background-color 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-contact-mobile:hover { background: var(--color-accent-hover); } .ds-contact-mobile:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }"
+    },
+    {
+      "name": "Quiet Link",
+      "kind": "custom",
+      "refersTo": "link-quiet",
+      "description": "Underlined ink link that turns orange on hover; LinkedIn, GitHub, visit links, desktop header contact.",
+      "html": "<a href=\"#\" class=\"ds-link-quiet\">LinkedIn</a>",
+      "css": ".ds-link-quiet { font-family: var(--font-sans); color: var(--color-ink); font-weight: 500; text-decoration: underline; text-decoration-color: var(--color-rule-strong); text-decoration-thickness: 1px; text-underline-offset: 0.22em; transition: color 120ms cubic-bezier(0.16, 1, 0.3, 1), text-decoration-color 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-link-quiet:hover { color: var(--color-accent); text-decoration-color: currentColor; } .ds-link-quiet:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky header on Paper with a hairline base; centred slate nav links.",
+      "html": "<header class=\"ds-header\"><span class=\"ds-wordmark\">&lt;Andre /&gt;</span><nav class=\"ds-nav\"><a href=\"#\">Works</a><a href=\"#\">Experience</a><a href=\"#\">Tech Stack</a></nav><a href=\"#\" class=\"ds-header-contact\">Contact Me</a></header>",
+      "css": ".ds-header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1.5rem; height: 3.5rem; padding: 0 1.5rem; background: var(--color-paper); border-bottom: 1px solid var(--color-rule); font-family: var(--font-sans); } .ds-wordmark { font-weight: 700; color: var(--color-ink); } .ds-nav { display: flex; gap: 2rem; } .ds-nav a { font-size: 0.875rem; font-weight: 500; color: var(--color-ink-muted); text-decoration: none; transition: color 120ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav a:hover { color: var(--color-ink); } .ds-header-contact { justify-self: end; font-size: 0.875rem; font-weight: 600; color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-rule-strong); text-underline-offset: 0.22em; } .ds-header-contact:hover { color: var(--color-accent); }"
+    },
+    {
+      "name": "Stack Tag",
+      "kind": "chip",
+      "refersTo": "stack-tag",
+      "description": "Static hairline-bordered tag for a technology.",
+      "html": "<ul class=\"ds-tags\"><li>Laravel</li><li>Nuxt</li><li>PostgreSQL</li></ul>",
+      "css": ".ds-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; font-family: var(--font-sans); } .ds-tags li { padding: 0.3rem 0.7rem; border: 1px solid var(--color-rule-strong); border-radius: 6px; font-size: 0.875rem; font-weight: 500; color: var(--color-ink); }"
+    },
+    {
+      "name": "Release Entry",
+      "kind": "custom",
+      "refersTo": "year-marker",
+      "description": "Signature: year in an 11rem rail (sticky on desktop), release in the column: title, meta, first-person note, description, screenshot, shipped, built with, visit.",
+      "html": "<div class=\"ds-release\"><p class=\"ds-year\">2026</p><article><h3 class=\"ds-rel-title\">Forte</h3><p class=\"ds-rel-meta\"><span>People assessment</span><span>Lead Developer</span><span>2026-now</span></p><p class=\"ds-rel-note\">I led it from the first commit.</p><p class=\"ds-rel-desc\">What the system does, in one or two plain sentences.</p><div class=\"ds-rel-shot\"></div><h4 class=\"ds-rel-label\">What shipped</h4><ul class=\"ds-rel-list\"><li>Payment gateway with retries</li><li>Scheduled reports</li></ul><a href=\"#\" class=\"ds-rel-visit\">forte.example &rarr;</a></article></div>",
+      "css": ".ds-release { display: grid; grid-template-columns: 11rem minmax(0, 1fr); column-gap: 2rem; font-family: var(--font-sans); } .ds-year { position: sticky; top: 5rem; margin: 0; font-size: 1.875rem; font-weight: 700; letter-spacing: -0.02em; color: var(--color-accent); font-variant-numeric: tabular-nums; } .ds-rel-title { margin: 0; font-size: 1.875rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; color: var(--color-ink); } .ds-rel-meta { margin: 0.5rem 0 0; display: flex; flex-wrap: wrap; font-size: 0.875rem; color: var(--color-ink-subtle); font-variant-numeric: tabular-nums; } .ds-rel-meta span + span::before { content: '·'; margin: 0 0.5rem; } .ds-rel-note { margin: 1.5rem 0 0; font-size: 1.25rem; font-weight: 500; line-height: 1.45; letter-spacing: -0.01em; color: var(--color-ink); max-width: 44ch; } .ds-rel-desc { margin: 1rem 0 0; line-height: 1.65; color: var(--color-ink-muted); max-width: 64ch; } .ds-rel-shot { margin-top: 2rem; aspect-ratio: 16 / 9; border: 1px solid var(--color-rule); border-radius: 8px; background: var(--color-paper-2); } .ds-rel-label { margin: 2rem 0 0; font-size: 0.875rem; font-weight: 600; color: var(--color-ink); } .ds-rel-list { list-style: none; margin: 0.75rem 0 0; padding: 0; } .ds-rel-list li { position: relative; padding: 0.25rem 0 0.25rem 1.25rem; line-height: 1.55; color: var(--color-ink-muted); } .ds-rel-list li::before { content: ''; position: absolute; left: 0; top: 0.95em; width: 0.5rem; height: 1px; background: var(--color-ink-subtle); } .ds-rel-visit { display: inline-block; margin-top: 1.5rem; font-size: 0.875rem; font-weight: 500; color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-rule-strong); text-underline-offset: 0.22em; } .ds-rel-visit:hover { color: var(--color-accent); text-decoration-color: currentColor; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Release Notes",
+    "overview": "The site reads like a well-kept product changelog from a careful tech company. Every system he built is a dated release: a title, a meta line, a short first-person note, what it does, a screenshot, what shipped, what it was built with, and a link out. The page is white, the ink is near-black, the secondary text is cool slate, and the only structure is a 1px hairline. One warm orange marks what to do and when things happened; nothing else is colored.\n\nDensity is moderate and editorial: generous vertical air between releases, tight measure inside them (44 to 64ch). The hero is type only, with no image, no works list and no card. Below it, every section shares one grammar: a left rail 11rem wide holding a date or a label, and the content column to its right. In the works changelog the year in that rail stays pinned while its releases scroll past; that positional stick is the signature interaction, and nothing else on the page moves except colour on hover.\n\nThe voice is first person throughout, and the visual system stays out of its way: no decorative devices, no costume type, no ornament between the reader and the work.",
+    "keyCharacteristics": [
+      "White page (near-black in dark mode), near-black ink, slate secondary, hairline rules only.",
+      "One warm orange, reserved for the primary action, date and year markers, link hover and the mobile header contact.",
+      "One grotesk (Schibsted Grotesk, 400 to 800) with tabular figures for dates; no mono.",
+      "An 11rem rail on the left, content on the right, in every section.",
+      "Sticky year marker in the works changelog; no other motion beyond hover colour.",
+      "8px radius on buttons and screenshots, 6px on small controls; no shadows, gradients or glass."
+    ],
+    "rules": [
+      {
+        "name": "The Orange Means Act-or-When Rule",
+        "body": "Orange appears only on the primary action, on date and year markers, on link hover, and on the mobile header contact. A non-date rail label is Pale Slate, never orange. If an orange element is neither something to click nor a point in time, it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Primary Per Viewport Rule",
+        "body": "On desktop the header contact is a quiet underlined link so the hero's orange button is the only filled primary in the first viewport. On mobile, where the nav is gone, the header contact becomes the compact orange button.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tabular Dates Rule",
+        "body": "Every year, period and date run in tabular figures so changelog dates align like a ledger.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Kicker Rule",
+        "body": "Nothing sits above a heading. Section titles, release titles and the hero name open their blocks directly; context goes beneath in a note or meta row.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Only Rule",
+        "body": "Structure is drawn with a 1px rule and nothing else. If a surface needs separating, draw a hairline; never a grey band, a shadow or a blur.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do put every section below the hero on the 11rem rail plus content column, with the section title starting at the page edge.",
+      "Do keep orange to the primary action, date and year markers, link hover and the mobile header contact.",
+      "Do separate everything with 1px hairlines on plain Paper.",
+      "Do set dates, years and periods in tabular figures.",
+      "Do write each release with a first-person note under its meta row.",
+      "Do limit motion to colour change on hover (120ms, cubic-bezier(0.16, 1, 0.3, 1))."
+    ],
+    "donts": [
+      "Don't put a kicker or eyebrow label above any heading.",
+      "Don't colour a non-date rail label orange; use Pale Slate.",
+      "Don't add a second filled primary to the desktop first viewport; the header contact stays a quiet link there.",
+      "Don't use grey section bands, shadows, gradients or glass.",
+      "Don't slide, fade or animate anything into view; the sticky year is positional only.",
+      "Don't introduce a second typeface or a monospace costume for dates or code.",
+      "Don't round beyond 8px."
+    ]
+  }
+}

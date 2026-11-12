@@ -1,27 +1,17 @@
 {
   "meta_title": "Alfian Andre Ramadhan — Fullstack Web Developer",
   "meta_desc": "Portofolio Alfian Andre Ramadhan, fullstack web developer di Jakarta yang membangun sistem production dengan Laravel, Vue, Next.js, TypeScript, dan Node.js.",
-  "nav_about": "Tentang",
   "nav_experience": "Pengalaman",
   "nav_stack": "Tech Stack",
-  "nav_portfolio": "Portofolio",
+  "nav_portfolio": "Karya",
   "btn_contact": "Hubungi Saya",
   "theme_toggle": "Ganti mode gelap",
-  "hero_greeting": "Hai, saya Alfian Andre Ramadhan, fullstack web developer di Jakarta.",
-  "hero_title_1": "Merancang sistem web dari",
-  "hero_concept": "konsep",
-  "hero_to": "hingga",
-  "hero_production": "produksi",
-  "hero_desc_1": "Bagi saya, coding adalah seni menggabungkan logika backend yang aman",
-  "hero_desc_2": "dengan antarmuka responsif",
-  "btn_view_work": "Lihat Hasil Kerja",
-  "btn_lets_connect": "Ngobrol Dulu",
-  "projects_title": "Proyek Unggulan",
-  "projects_desc": "Sistem production yang saya bangun atau ikut bangun, dari platform event hingga produk asesmen.",
-  "projects_key_work": "Kontribusi utama ({count})",
+  "projects_title": "Karya",
   "projects": {
     "forte": {
+      "sector": "Asesmen SDM",
       "meta": "Lead Developer · 2026–sekarang · tim 3 orang",
+      "note": "Saya memimpin Forte sejak commit pertama: API Express, frontend Next.js, scoring engine, dan pipeline yang men-deploy-nya.",
       "desc": "Platform asesmen SDM untuk rekrutmen, pengembangan tim, dan pengembangan diri. Kandidat mengerjakan asesmen berwaktu dan mendapat profil hasil skoring; organisasi mengelola anggota dan hasilnya.",
       "features": [
         "Merancang arsitektur API Express + Prisma dan frontend Next.js 16 sejak commit pertama",
@@ -32,7 +22,9 @@
       ]
     },
     "medexpo": {
+      "sector": "Event medis",
       "meta": "Fullstack Developer · 2026 · tim 5 orang",
+      "note": "Bagian saya urusan uang dan kursi: form registrasi, kuota hotel, invoice kedaluwarsa, dan pembayaran USD yang direkonsiliasi ke rupiah.",
       "desc": "Platform event medis generasi baru. Peserta membeli paket lengkap atau sesi satuan; penyelenggara mengelola peserta, pembayaran, badge, dan akomodasi dari satu portal.",
       "features": [
         "Form registrasi yang bisa dikonfigurasi per tipe registrasi, dengan konfirmasi OTP dan draft yang bisa dilanjutkan",
@@ -43,7 +35,9 @@
       ]
     },
     "isicam": {
+      "sector": "Kongres kardiologi",
       "meta": "Fullstack Developer · 2024–2026 · tim 5 orang",
+      "note": "Tiga edisi kongres di satu platform: tiket, abstrak dengan video, hotel, dan pembayaran dua mata uang.",
       "desc": "Platform registrasi dan event untuk kongres kardiologi intervensi terbesar di Indonesia, dipakai tiga edisi tahunan: tiket, pembayaran, abstrak, hotel, dan program ilmiah.",
       "features": [
         "Submisi abstrak dengan upload video ke Cloudflare Stream",
@@ -54,7 +48,9 @@
       ]
     },
     "wahanahonda": {
+      "sector": "Dealer motor",
       "meta": "Web Developer · 2024–sekarang · maintainer utama",
+      "note": "Saya maintainer utamanya sejak 2024: fitur katalog, security hardening, dan change request yang terus datang.",
       "desc": "Website resmi dan panel admin main dealer motor Honda untuk Jakarta dan Tangerang: katalog, daftar harga, simulasi kredit, serta lead test ride dan promo.",
       "features": [
         "Fitur katalog: spesifikasi motor listrik, gambar varian per harga, perbandingan model",
@@ -64,7 +60,9 @@
       ]
     },
     "inahrsregistry": {
+      "sector": "Registry medis",
       "meta": "Fullstack Developer · 2026 · tim 6 orang",
+      "note": "Saya menyiapkan core-nya dan membangun alur keanggotaan: registrasi, persetujuan, perpanjangan, dan pembayaran.",
       "desc": "Portal member dan registry kasus aritmia untuk Indonesian Heart Rhythm Society: dokter mendaftar dan membayar keanggotaan, lalu mengirim kasus ablasi, CIED, dan AF untuk diverifikasi admin.",
       "features": [
         "Menyiapkan core dari boilerplate internal dan build production",
@@ -75,7 +73,9 @@
       ]
     },
     "inahrs": {
+      "sector": "Perhimpunan medis",
       "meta": "Fullstack Developer · 2023–2026 · kontributor utama",
+      "note": "Saya membangun direktori anggota dan memindahkan codebase dari Laravel 8 ke 11, selangkah demi selangkah.",
       "desc": "Website publik dan CMS admin Indonesian Heart Rhythm Society: direktori anggota, pertemuan dan event, program pelatihan, guideline, dan publikasi.",
       "features": [
         "Membangun direktori anggota untuk dokter dan tenaga kesehatan allied, lengkap dengan pendidikan, jabatan, dan riwayat kerja",
@@ -85,7 +85,9 @@
       ]
     },
     "festivia": {
+      "sector": "Marketplace event",
       "meta": "Fullstack Developer · 2023–2026 · tim 5 orang",
+      "note": "Saya meng-upgrade Festivia dari Laravel 5.5 ke 10 secara bertahap, lalu membangun event builder dan pencairan dana organizer.",
       "desc": "Marketplace event untuk seluruh Indonesia: organizer membuat event serta menjual tiket dan merchandise; peserta mencari event per kota, membeli tiket, dan check-in dengan QR code.",
       "features": [
         "Upgrade codebase bertahap dari Laravel 5.5 / PHP 7.0 ke Laravel 10 / PHP 8.1",
@@ -96,7 +98,9 @@
       ]
     },
     "sinau": {
+      "sector": "E-learning kedokteran",
       "meta": "Fullstack Developer · 2023–2025 · tim 5 orang",
+      "note": "Saya membangun checkout dan bank soal dengan tryout yang dinilai otomatis, lalu meng-upgrade-nya ke Laravel 11.",
       "desc": "Platform belajar online untuk mahasiswa kedokteran dan dokter: bimbingan UKMPPD, persiapan PPDS, webinar, video rekaman, dan tryout.",
       "features": [
         "Checkout end-to-end dengan Midtrans, kode promo, dan form registrasi per produk",
@@ -107,7 +111,9 @@
       ]
     },
     "eria": {
+      "sector": "Lembaga riset",
       "meta": "Fullstack Developer · 2023–2024 · tim 3 orang",
+      "note": "Saya membangun CMS dan sebagian besar halaman publik sejak commit pertama, termasuk editor Tiptap kustom dan peta negara interaktif.",
       "desc": "Website dan CMS untuk Regional Knowledge Centre for Marine Plastic Debris milik ERIA: publikasi, regulasi per negara, event, dan platform sektor swasta.",
       "features": [
         "Membangun CMS admin dan sebagian besar halaman publik sejak commit pertama",
@@ -117,17 +123,18 @@
       ]
     },
     "epic": {
+      "sector": "Perumahan",
       "desc": "Sistem manajemen perumahan untuk grup EPIC. Fitur mencakup manajemen warga, pembayaran iuran, pelaporan keluhan, dan pelacakan tamu untuk area perumahan."
     }
   },
-  "btn_visit": "Kunjungi Situs",
-  "stack_title": "Teknologi Pilihan",
+  "stack_title": "Tech Stack",
   "stack_desc": "Teknologi di balik proyek-proyek di atas.",
   "stack_laravel_title": "Laravel & PHP",
-  "stack_laravel_desc": "Spesialis dalam membangun aplikasi skala enterprise yang aman dan mudah dikelola (Monolith).",
+  "stack_laravel_desc": "Sebagian besar pekerjaan production saya berjalan di Laravel: Inertia dan Vue di depan, scheduler, integrasi pembayaran, dan codebase lama yang terus saya upgrade.",
   "stack_js_title": "TypeScript & Node.js",
-  "stack_js_desc": "Membangun frontend interaktif dan API Node.js dengan TypeScript.",
+  "stack_js_desc": "Pilihan saya untuk proyek yang lebih baru: Next.js di depan, API Express dan Prisma di belakangnya, Redis dan BullMQ untuk pekerjaan di background.",
   "stack_infra_title": "Infra & Integrasi",
+  "stack_infra_desc": "Bagian di sekitar kode: pipeline CI/CD, process manager, serta layanan pembayaran dan video yang dipakai sistem-sistem ini.",
   "experience_title": "Pengalaman",
   "experience_desc": "5+ tahun membangun sistem web production.",
   "experience_education_label": "Pendidikan",
@@ -135,7 +142,9 @@
   "experience": {
     "totalit": {
       "period": "Mei 2022 – Sekarang",
-      "roles": ["Web Developer · Jakarta"],
+      "roles": [
+        "Web Developer · Jakarta"
+      ],
       "points": [
         "Membangun dan memelihara sistem production untuk instansi pemerintah, organisasi internasional, kesehatan, perpustakaan digital, e-learning, dan platform event",
         "Merancang REST API dan mengintegrasikan layanan pihak ketiga: payment gateway, email transaksional, OTP, dan video streaming",
@@ -155,5 +164,13 @@
         "Memperbaiki bug serta memelihara website utama dan blog (PHP, CodeIgniter, jQuery)"
       ]
     }
-  }
+  },
+  "hero_role": "Fullstack web developer di Jakarta",
+  "hero_hook": "Saya membangun sistem web yang menerima pembayaran, berjalan terjadwal, dan tetap bekerja bertahun-tahun.",
+  "btn_email": "Kirim email",
+  "contact_title": "Punya sistem yang perlu dibangun, atau dijaga tetap jalan?",
+  "contact_desc": "Ceritakan apa yang sedang Anda kerjakan. Email paling cepat sampai ke saya; saya juga ada di LinkedIn dan GitHub.",
+  "shipped": "Yang dikerjakan",
+  "built_with": "Dibangun dengan",
+  "year_other": "Lainnya"
 }

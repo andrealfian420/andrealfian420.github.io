@@ -1,27 +1,17 @@
 {
   "meta_title": "Alfian Andre Ramadhan — Fullstack Web Developer",
   "meta_desc": "Portfolio of Alfian Andre Ramadhan, a Jakarta-based fullstack web developer building production systems with Laravel, Vue, Next.js, TypeScript and Node.js.",
-  "nav_about": "About",
   "nav_experience": "Experience",
   "nav_stack": "Tech Stack",
-  "nav_portfolio": "Portfolio",
+  "nav_portfolio": "Works",
   "btn_contact": "Contact Me",
   "theme_toggle": "Toggle dark mode",
-  "hero_greeting": "Hi, I'm Alfian Andre Ramadhan, a fullstack web developer in Jakarta.",
-  "hero_title_1": "I architect web systems from",
-  "hero_concept": "concept",
-  "hero_to": "to",
-  "hero_production": "production",
-  "hero_desc_1": "For me, coding is the art of combining secure backend logic",
-  "hero_desc_2": "with responsive interfaces",
-  "btn_view_work": "View My Work",
-  "btn_lets_connect": "Let's Connect",
-  "projects_title": "Featured Projects",
-  "projects_desc": "Production systems I've built or helped build, from event platforms to assessment products.",
-  "projects_key_work": "Key work ({count})",
+  "projects_title": "Works",
   "projects": {
     "forte": {
+      "sector": "People assessment",
       "meta": "Lead Developer · 2026–now · team of 3",
+      "note": "I led Forte from the first commit: the Express API, the Next.js frontend, the scoring engine and the pipeline that deploys it.",
       "desc": "People-assessment platform for hiring, team building and personal growth. Candidates take timed assessments and receive a scored profile; organizations manage members and results.",
       "features": [
         "Architected the Express + Prisma API and the Next.js 16 frontend from the first commit",
@@ -32,7 +22,9 @@
       ]
     },
     "medexpo": {
+      "sector": "Medical events",
       "meta": "Fullstack Developer · 2026 · team of 5",
+      "note": "My part was the money and the seats: registration forms, hotel quotas, expired invoices, and USD payments reconciled to rupiah.",
       "desc": "Next-generation medical event platform. Attendees buy full packages or single sessions; organizers manage participants, payments, badges and accommodation from one portal.",
       "features": [
         "Configurable registration forms per registration type, with OTP confirmation and resumable drafts",
@@ -43,7 +35,9 @@
       ]
     },
     "isicam": {
+      "sector": "Cardiology congress",
       "meta": "Fullstack Developer · 2024–2026 · team of 5",
+      "note": "Three congress editions on one platform: tickets, abstracts with video, hotels and payments in two currencies.",
       "desc": "Registration and event platform for Indonesia's largest interventional cardiology congress, running three annual editions: ticketing, payments, abstracts, hotels and the scientific program.",
       "features": [
         "Abstract submission with video upload to Cloudflare Stream",
@@ -54,7 +48,9 @@
       ]
     },
     "wahanahonda": {
+      "sector": "Motorcycle dealer",
       "meta": "Web Developer · 2024–now · main maintainer",
+      "note": "I've been the main maintainer since 2024: catalogue features, security hardening and the change requests that keep coming.",
       "desc": "Official website and admin panel for Honda's main motorcycle dealer in Jakarta and Tangerang: catalogue, price lists, credit simulation, and test-ride and promo leads.",
       "features": [
         "Catalogue features: EV specifications, variant images per price, model comparison",
@@ -64,7 +60,9 @@
       ]
     },
     "inahrsregistry": {
+      "sector": "Medical registry",
       "meta": "Fullstack Developer · 2026 · team of 6",
+      "note": "I set up the core of this one and built the membership flow: registration, approval, renewals and payments.",
       "desc": "Member portal and arrhythmia case registry for the Indonesian Heart Rhythm Society: doctors register and pay their membership, then submit ablation, CIED and AF cases for admin verification.",
       "features": [
         "Set up the core from the internal boilerplate and the production build",
@@ -75,7 +73,9 @@
       ]
     },
     "inahrs": {
+      "sector": "Medical society",
       "meta": "Fullstack Developer · 2023–2026 · top contributor",
+      "note": "I built the member directory and moved the codebase from Laravel 8 to 11, one step at a time.",
       "desc": "Public website and admin CMS of the Indonesian Heart Rhythm Society: member directory, meetings and events, training programs, guidelines and publications.",
       "features": [
         "Built the member directory for doctors and allied health staff, with education, positions and work history",
@@ -85,7 +85,9 @@
       ]
     },
     "festivia": {
+      "sector": "Event marketplace",
       "meta": "Fullstack Developer · 2023–2026 · team of 5",
+      "note": "I upgraded Festivia from Laravel 5.5 to 10 step by step, and built its event builder and organizer payouts.",
       "desc": "Event marketplace for Indonesia: organizers list events and sell tickets and merchandise; attendees discover events by city, buy tickets and check in with QR codes.",
       "features": [
         "Upgraded the codebase step by step from Laravel 5.5 / PHP 7.0 to Laravel 10 / PHP 8.1",
@@ -96,7 +98,9 @@
       ]
     },
     "sinau": {
+      "sector": "Medical e-learning",
       "meta": "Fullstack Developer · 2023–2025 · team of 5",
+      "note": "I built the checkout and the question bank with auto-graded tryouts, then upgraded it to Laravel 11.",
       "desc": "Online learning platform for medical students and doctors: UKMPPD tutoring, residency (PPDS) preparation, webinars, recorded lessons and tryouts.",
       "features": [
         "End-to-end checkout with Midtrans, promo codes and per-product registration forms",
@@ -107,7 +111,9 @@
       ]
     },
     "eria": {
+      "sector": "Research institute",
       "meta": "Fullstack Developer · 2023–2024 · team of 3",
+      "note": "I built the CMS and most public pages from the first commit, including a custom Tiptap editor and an interactive country map.",
       "desc": "Website and CMS for ERIA's Regional Knowledge Centre for Marine Plastic Debris: publications, country regulations, events and a private-sector platform.",
       "features": [
         "Built the admin CMS and most public pages from the first commit",
@@ -117,17 +123,18 @@
       ]
     },
     "epic": {
+      "sector": "Housing",
       "desc": "Housing management system for the EPIC group. Features include resident management, dues payment, complaint reporting, and guest tracking for residential areas."
     }
   },
-  "btn_visit": "Visit Site",
-  "stack_title": "Selected Technologies",
+  "stack_title": "Tech Stack",
   "stack_desc": "The tools behind the projects above.",
   "stack_laravel_title": "Laravel & PHP",
-  "stack_laravel_desc": "Specializing in building secure and maintainable enterprise-scale applications (Monolith).",
+  "stack_laravel_desc": "Most of my production work runs on Laravel: Inertia and Vue on the front, schedulers, payment integrations, and long-lived codebases I keep upgrading.",
   "stack_js_title": "TypeScript & Node.js",
-  "stack_js_desc": "Building interactive frontends and Node.js APIs with TypeScript.",
+  "stack_js_desc": "What I reach for on newer builds: Next.js on the front, an Express and Prisma API behind it, Redis and BullMQ for the background work.",
   "stack_infra_title": "Infra & Integrations",
+  "stack_infra_desc": "The parts around the code: CI/CD pipelines, process managers, and the payment and video services these systems depend on.",
   "experience_title": "Experience",
   "experience_desc": "5+ years building production web systems.",
   "experience_education_label": "Education",
@@ -135,7 +142,9 @@
   "experience": {
     "totalit": {
       "period": "May 2022 – Present",
-      "roles": ["Web Developer · Jakarta"],
+      "roles": [
+        "Web Developer · Jakarta"
+      ],
       "points": [
         "Built and maintained production systems for government institutions, international organizations, healthcare, digital libraries, e-learning and event platforms",
         "Designed REST APIs and integrated third-party services: payment gateways, transactional email, OTP and video streaming",
@@ -155,5 +164,13 @@
         "Fixed bugs and maintained the main website and blog (PHP, CodeIgniter, jQuery)"
       ]
     }
-  }
+  },
+  "hero_role": "Fullstack web developer in Jakarta",
+  "hero_hook": "I build web systems that take payments, run on schedules and keep working for years.",
+  "btn_email": "Email me",
+  "contact_title": "Have a system that needs building, or keeping alive?",
+  "contact_desc": "Tell me what you're working on. Email reaches me fastest, and I'm also on LinkedIn and GitHub.",
+  "shipped": "What shipped",
+  "built_with": "Built with",
+  "year_other": "Other"
 }
