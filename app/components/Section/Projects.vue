@@ -34,7 +34,8 @@
             </p>
             <p class="entry-desc">{{ t(`projects.${work.slug}.desc`) }}</p>
 
-            <figure class="entry-shot">
+            <UIShotGallery v-if="work.shots" :work="work" />
+            <figure v-else class="entry-shot">
               <NuxtImg
                 :src="work.img"
                 :alt="`${work.title} screenshot`"

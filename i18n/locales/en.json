@@ -19,7 +19,15 @@
         "Server-side scoring engine running on background jobs (BullMQ, outbox, dead-letter queue)",
         "Bilingual CMS, organization management, OTP and Google sign-in, role-based access",
         "Redis-backed rate limiting, refresh-token rotation, CI/CD to VPS via Bitbucket Pipelines"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage: one assessment for hiring, team building and growth",
+        "solutions": "Forte Select: candidate report with scored competencies",
+        "insight": "Forte Insight: a personal InnerMap for individuals",
+        "innermap": "InnerMap sample report and how to read it",
+        "science": "The science page: how a result is built",
+        "pricing": "Open per-report pricing in rupiah"
+      }
     },
     "medexpo": {
       "sector": "Medical events",
@@ -32,7 +40,13 @@
         "Hotel booking flows for personal and sponsored participants",
         "Scheduler that releases seats from expired invoices, plus waitlist seat assignment",
         "International bank transfers and IDR reconciliation for USD orders, covered by PHPUnit tests"
-      ]
+      ],
+      "shots": {
+        "dashboard": "Admin dashboard with live participant, hotel and abstract counts",
+        "registration": "Four-step participant registration with progress tracking",
+        "sponsor": "Sponsor registration for companies and their PIC",
+        "login": "Sign-in for participants, sponsors and admins"
+      }
     },
     "isicam": {
       "sector": "Cardiology congress",
@@ -45,7 +59,14 @@
         "Hotel booking with add-ons and a room-quota dashboard",
         "REST API for the companion mobile app (tickets, schedule, posters, payments)",
         "Email delivery moved to ZeptoMail; security hardening across the app"
-      ]
+      ],
+      "shots": {
+        "home": "ISICAM 2026 homepage with the event countdown",
+        "registration": "Registration packages with IDR and USD pricing",
+        "program": "Full scientific program with filters and favourites",
+        "abstracts": "International case and research abstract competition",
+        "venue": "Venue and partner hotels for accommodation booking"
+      }
     },
     "wahanahonda": {
       "sector": "Motorcycle dealer",
@@ -57,7 +78,14 @@
         "Moved the SMS OTP provider across all lead forms",
         "Security hardening: input sanitization, signed resource IDs, rate limiting, security headers",
         "Ongoing maintenance and client change requests since 2024"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage with promos and quick tools",
+        "catalogue": "Motorcycle catalogue by category with OTR prices",
+        "product": "Product page with variants and specifications",
+        "ev": "Electric motorcycle line-up",
+        "calculator": "Credit simulation: down payment and monthly instalments"
+      }
     },
     "inahrsregistry": {
       "sector": "Medical registry",
@@ -70,7 +98,12 @@
         "Middleware that limits the portal to members with an active membership",
         "REST API covering auth, profile, registry, events and forum",
         "Excel exports and reviewer notes for registry cases"
-      ]
+      ],
+      "shots": {
+        "dashboard": "Admin dashboard: members, pending approvals, active and expired",
+        "register": "Membership registration for specialists and allied professionals",
+        "login": "Member sign-in"
+      }
     },
     "inahrs": {
       "sector": "Medical society",
@@ -82,7 +115,14 @@
         "Upgraded the codebase step by step from Laravel 8 / PHP 7.3 to Laravel 11 / PHP 8.2",
         "Led the 2026 homepage redesign and refreshed the detail pages for news, publications, training and fellowships",
         "Public JSON API for guidelines, media and publications"
-      ]
+      ],
+      "shots": {
+        "home": "Redesigned homepage for the 2026 annual meeting",
+        "meetings": "Archive of annual scientific meetings",
+        "news": "News on heart rhythm care",
+        "media": "Guidelines and publications library",
+        "membership": "Membership requirements and registration flow"
+      }
     },
     "festivia": {
       "sector": "Event marketplace",
@@ -95,7 +135,13 @@
         "Organizer payouts through Xendit sub-accounts, with withdrawal quotas and bank-account approval",
         "Merchandise store with variants, promo codes and an approval flow",
         "Venue check-in with QR scanning, re-registration and BIB numbers for races"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage with featured and newest events (staging site)",
+        "events": "Event listing with online/offline, area and date filters",
+        "event": "Event page with ticket sales and registration details",
+        "merch": "Merchandise store with organizer and category filters"
+      }
     },
     "sinau": {
       "sector": "Medical e-learning",
@@ -108,7 +154,14 @@
         "Time-limited and lifetime access to recorded lessons",
         "Upgraded the codebase from Laravel 8 to Laravel 11 (PHP 8.2)",
         "Admin reports and Excel exports for participants, transactions and test results"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage for medical tutoring, PPDS prep and webinars",
+        "tryout": "Tryout catalogue by study level",
+        "ppds": "PPDS prep classes compared side by side",
+        "videos": "Recorded lessons with time-limited or lifetime access",
+        "blog": "Health blog by category"
+      }
     },
     "eria": {
       "sector": "Research institute",
@@ -120,7 +173,15 @@
         "Custom rich-text editor on Tiptap, plus a block-based flexible page builder",
         "Interactive SVG country map and site-wide search across 11 content types",
         "Private-sector platform: company registration, product submission, admin approval and email notifications"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage with the rotating story banner",
+        "private": "Private Sector Platform: company sign-up and login",
+        "publications": "Reports and publications library with search",
+        "laws": "Laws and regulations by ASEAN+3 country",
+        "epr": "Extended Producer Responsibility hub",
+        "events": "Events with category filter and search"
+      }
     },
     "epic": {
       "sector": "Housing",
@@ -172,5 +233,10 @@
   "contact_desc": "Tell me what you're working on. Email reaches me fastest, and I'm also on LinkedIn and GitHub.",
   "shipped": "What shipped",
   "built_with": "Built with",
-  "year_other": "Other"
+  "year_other": "Other",
+  "gallery_label": "{title} screenshots",
+  "gallery_open": "Open screenshot: {caption}",
+  "gallery_prev": "Previous screenshot",
+  "gallery_next": "Next screenshot",
+  "gallery_close": "Close"
 }

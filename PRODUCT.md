@@ -41,7 +41,7 @@ Supporting strengths, true but secondary: modernizing legacy Laravel codebases (
 ## Capabilities and Constraints
 
 - Nuxt 4 SSG (`nuxt generate`), Tailwind CSS 4, `@nuxt/image`, `@nuxtjs/i18n`, `@nuxtjs/color-mode`. No server runtime; anything dynamic must work as static output.
-- Project data (slug, title, image, stack, URL) lives in `app/components/Section/Projects.vue`; text per project lives in i18n under `projects.<slug>`. Featured projects carry `meta` and `features`; others carry only `desc`.
+- Project data (slug, title, gallery shots, stack, URL) lives in `app/utils/works.js`; text per project lives in i18n under `projects.<slug>`, including one caption per gallery image under `projects.<slug>.shots`. Featured projects carry `meta` and `features`; others carry only `desc`.
 - Open Graph image is `public/og.jpg` (1200x630); regenerate it when the hero changes.
 
 ## Brand Commitments
@@ -51,7 +51,7 @@ Supporting strengths, true but secondary: modernizing legacy Laravel codebases (
 
 ## Evidence on Hand
 
-- Ten projects with screenshots in `public/img/`: Forte, MedExpo, ISICAM, Wahana Honda, InaHRS Registry, InaHRS, Festivia, Sinau Yuk, ERIA, EPIC. Most are client work built at Totalit.
+- Ten projects with screenshots: nine have a gallery of three to six images in `public/img/<slug>/` (public pages and aggregate-only admin dashboards, never pages showing participant, member or patient data); EPIC has a single `public/img/epic.webp`. Projects: Forte, MedExpo, ISICAM, Wahana Honda, InaHRS Registry, InaHRS, Festivia (captured from its staging site), Sinau Yuk, ERIA, EPIC. Most are client work built at Totalit.
 - Cleared to show for client work: client names, screenshots, live site links and feature lists. Source code is private and must not be implied as public.
 - Experience: Totalit (Web Developer, May 2022 to present), Umrotix (Mar 2020 to Nov 2021). Education: STMIK Bani Saleh Bekasi, B.Sc. Information Systems, 2017 to 2021.
 - No testimonials, client quotes, metrics dashboards, awards or press exist. Do not invent them.

@@ -19,7 +19,15 @@
         "Scoring engine di sisi server yang berjalan sebagai background job (BullMQ, outbox, dead-letter queue)",
         "CMS dwibahasa, manajemen organisasi, login OTP dan Google, serta hak akses berbasis role",
         "Rate limiting berbasis Redis, rotasi refresh token, dan CI/CD ke VPS lewat Bitbucket Pipelines"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage: satu asesmen untuk rekrutmen, pengembangan tim, dan pengembangan diri",
+        "solutions": "Forte Select: laporan kandidat dengan skor kompetensi",
+        "insight": "Forte Insight: InnerMap pribadi untuk individu",
+        "innermap": "Contoh laporan InnerMap dan cara membacanya",
+        "science": "Halaman sains: cara hasil asesmen disusun",
+        "pricing": "Harga per laporan yang terbuka, dalam rupiah"
+      }
     },
     "medexpo": {
       "sector": "Event medis",
@@ -32,7 +40,13 @@
         "Alur booking hotel untuk peserta personal dan peserta sponsor",
         "Scheduler yang melepas kursi dari invoice kedaluwarsa, plus penempatan kursi dari waitlist",
         "Transfer bank internasional dan rekonsiliasi Rupiah untuk order USD, dilengkapi tes PHPUnit"
-      ]
+      ],
+      "shots": {
+        "dashboard": "Dashboard admin dengan jumlah peserta, hotel, dan abstrak secara live",
+        "registration": "Registrasi peserta empat langkah dengan penanda progres",
+        "sponsor": "Registrasi sponsor untuk perusahaan dan PIC-nya",
+        "login": "Halaman masuk untuk peserta, sponsor, dan admin"
+      }
     },
     "isicam": {
       "sector": "Kongres kardiologi",
@@ -45,7 +59,14 @@
         "Booking hotel dengan add-on dan dashboard kuota kamar",
         "REST API untuk aplikasi mobile pendamping (tiket, jadwal, poster, pembayaran)",
         "Pengiriman email dipindah ke ZeptoMail; security hardening di seluruh aplikasi"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage ISICAM 2026 dengan hitung mundur acara",
+        "registration": "Paket registrasi dengan harga IDR dan USD",
+        "program": "Program ilmiah lengkap dengan filter dan favorit",
+        "abstracts": "Kompetisi abstrak kasus dan riset internasional",
+        "venue": "Venue dan hotel mitra untuk booking akomodasi"
+      }
     },
     "wahanahonda": {
       "sector": "Dealer motor",
@@ -57,7 +78,14 @@
         "Migrasi provider SMS OTP di seluruh form lead",
         "Security hardening: sanitasi input, ID resource yang ditandatangani, rate limiting, security header",
         "Maintenance berkelanjutan dan change request klien sejak 2024"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage dengan promo dan menu cepat",
+        "catalogue": "Katalog motor per kategori dengan harga OTR",
+        "product": "Halaman produk dengan varian dan spesifikasi",
+        "ev": "Deretan motor listrik",
+        "calculator": "Simulasi kredit: DP dan cicilan bulanan"
+      }
     },
     "inahrsregistry": {
       "sector": "Registry medis",
@@ -70,7 +98,12 @@
         "Middleware yang membatasi portal hanya untuk member dengan keanggotaan aktif",
         "REST API untuk auth, profil, registry, event, dan forum",
         "Export Excel dan catatan reviewer untuk kasus registry"
-      ]
+      ],
+      "shots": {
+        "dashboard": "Dashboard admin: member, approval tertunda, aktif, dan kedaluwarsa",
+        "register": "Registrasi keanggotaan untuk dokter spesialis dan tenaga allied",
+        "login": "Halaman masuk member"
+      }
     },
     "inahrs": {
       "sector": "Perhimpunan medis",
@@ -82,7 +115,14 @@
         "Upgrade codebase bertahap dari Laravel 8 / PHP 7.3 ke Laravel 11 / PHP 8.2",
         "Memimpin redesign homepage 2026 dan memperbarui halaman detail berita, publikasi, pelatihan, dan fellowship",
         "JSON API publik untuk guideline, media, dan publikasi"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage hasil redesign untuk pertemuan tahunan 2026",
+        "meetings": "Arsip pertemuan ilmiah tahunan",
+        "news": "Berita seputar penanganan irama jantung",
+        "media": "Pustaka guideline dan publikasi",
+        "membership": "Syarat dan alur pendaftaran keanggotaan"
+      }
     },
     "festivia": {
       "sector": "Marketplace event",
@@ -95,7 +135,13 @@
         "Pencairan dana organizer lewat sub-account Xendit, dengan kuota penarikan dan persetujuan rekening bank",
         "Toko merchandise dengan varian, kode promo, dan alur persetujuan",
         "Check-in di venue dengan scan QR, registrasi ulang, dan nomor BIB untuk lomba lari"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage dengan event unggulan dan terbaru (situs staging)",
+        "events": "Daftar event dengan filter online/offline, area, dan tanggal",
+        "event": "Halaman event dengan penjualan tiket dan detail registrasi",
+        "merch": "Toko merchandise dengan filter organizer dan kategori"
+      }
     },
     "sinau": {
       "sector": "E-learning kedokteran",
@@ -108,7 +154,14 @@
         "Akses video rekaman berbatas waktu maupun seumur hidup",
         "Upgrade codebase dari Laravel 8 ke Laravel 11 (PHP 8.2)",
         "Laporan admin dan export Excel untuk peserta, transaksi, dan hasil tes"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage untuk bimbingan kedokteran, persiapan PPDS, dan webinar",
+        "tryout": "Katalog tryout per jenjang",
+        "ppds": "Perbandingan kelas persiapan PPDS",
+        "videos": "Video rekaman dengan akses berbatas waktu atau seumur hidup",
+        "blog": "Blog kesehatan per kategori"
+      }
     },
     "eria": {
       "sector": "Lembaga riset",
@@ -120,7 +173,15 @@
         "Rich-text editor kustom berbasis Tiptap, plus page builder fleksibel berbasis blok",
         "Peta negara SVG interaktif dan pencarian di 11 jenis konten",
         "Platform sektor swasta: registrasi perusahaan, submit produk, persetujuan admin, dan notifikasi email"
-      ]
+      ],
+      "shots": {
+        "home": "Homepage dengan banner cerita yang berganti",
+        "private": "Private Sector Platform: pendaftaran dan login perusahaan",
+        "publications": "Pustaka laporan dan publikasi dengan pencarian",
+        "laws": "Peraturan per negara ASEAN+3",
+        "epr": "Pusat informasi Extended Producer Responsibility",
+        "events": "Event dengan filter kategori dan pencarian"
+      }
     },
     "epic": {
       "sector": "Perumahan",
@@ -172,5 +233,10 @@
   "contact_desc": "Ceritakan apa yang sedang Anda kerjakan. Email paling cepat sampai ke saya; saya juga ada di LinkedIn dan GitHub.",
   "shipped": "Yang dikerjakan",
   "built_with": "Dibangun dengan",
-  "year_other": "Lainnya"
+  "year_other": "Lainnya",
+  "gallery_label": "Screenshot {title}",
+  "gallery_open": "Buka screenshot: {caption}",
+  "gallery_prev": "Screenshot sebelumnya",
+  "gallery_next": "Screenshot berikutnya",
+  "gallery_close": "Tutup"
 }

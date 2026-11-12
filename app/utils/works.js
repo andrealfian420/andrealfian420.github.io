@@ -2,11 +2,14 @@
 // lives in i18n under `projects.<slug>`; `meta` reads "role · period · team".
 // `lead` is the feature shown as the highlight. `section` is how the system
 // is built, top layer first, using only stack facts stated in the copy.
+// `shots` are gallery images at /img/<slug>/<shot>.webp, first one is the
+// entry screenshot; captions live in i18n under `projects.<slug>.shots`.
+// EPIC has a single `img` and no gallery.
 export const works = [
   {
     slug: 'forte',
     title: 'Forte',
-    img: '/img/forte/home.webp',
+    shots: ['home', 'solutions', 'insight', 'innermap', 'science', 'pricing'],
     url: 'https://goforte.id',
     lead: 2,
     section: {
@@ -19,7 +22,7 @@ export const works = [
   {
     slug: 'medexpo',
     title: 'Med Expo',
-    img: '/img/medexpo/dashboard.webp',
+    shots: ['dashboard', 'registration', 'sponsor', 'login'],
     url: 'https://medexpo.totalit.co.id',
     lead: 3,
     section: {
@@ -31,7 +34,7 @@ export const works = [
   {
     slug: 'inahrsregistry',
     title: 'InaHRS Registry',
-    img: '/img/inahrsregistry/dashboard.webp',
+    shots: ['dashboard', 'register', 'login'],
     url: 'https://inahrsregistry.totalit.co.id',
     lead: 1,
     section: {
@@ -43,7 +46,7 @@ export const works = [
   {
     slug: 'isicam',
     title: 'ISICAM',
-    img: '/img/isicam/home.webp',
+    shots: ['home', 'registration', 'program', 'abstracts', 'venue'],
     url: 'https://isicam.id',
     lead: 1,
     section: {
@@ -55,7 +58,7 @@ export const works = [
   {
     slug: 'wahanahonda',
     title: 'Wahana Honda',
-    img: '/img/wahanahonda/home.webp',
+    shots: ['home', 'catalogue', 'product', 'ev', 'calculator'],
     url: 'https://www.wahanahonda.com',
     lead: 3,
     section: {
@@ -66,7 +69,7 @@ export const works = [
   {
     slug: 'inahrs',
     title: 'InaHRS',
-    img: '/img/inahrs/home.webp',
+    shots: ['home', 'meetings', 'news', 'media', 'membership'],
     url: 'https://inahrs.or.id',
     lead: 1,
     section: {
@@ -77,7 +80,7 @@ export const works = [
   {
     slug: 'festivia',
     title: 'Festivia',
-    img: '/img/festivia/home.webp',
+    shots: ['home', 'events', 'event', 'merch'],
     url: 'https://festivia.id',
     lead: 0,
     section: {
@@ -89,7 +92,7 @@ export const works = [
   {
     slug: 'sinau',
     title: 'Sinauyuk!',
-    img: '/img/sinau/home.webp',
+    shots: ['home', 'tryout', 'ppds', 'videos', 'blog'],
     url: 'https://sinauyuk.id',
     lead: 1,
     section: {
@@ -101,7 +104,7 @@ export const works = [
   {
     slug: 'eria',
     title: 'ERIA RKC-MPD',
-    img: '/img/eria/home.webp',
+    shots: ['home', 'private', 'publications', 'laws', 'epr', 'events'],
     url: 'https://rkcmpd-eria.org',
     lead: 1,
     section: {
@@ -123,5 +126,7 @@ export const works = [
 ];
 
 export const workNo = (i) => String(i + 1).padStart(2, '0');
+
+export const shotSrc = (slug, shot) => `/img/${slug}/${shot}.webp`;
 
 export const workHost = (url) => new URL(url).host.replace(/^www\./, '');

@@ -121,6 +121,13 @@ components:
   entry-screenshot:
     backgroundColor: "{colors.paper-2}"
     rounded: "{rounded.md}"
+  gallery-thumb:
+    backgroundColor: "{colors.paper-2}"
+    rounded: "{rounded.sm}"
+  lightbox:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body}"
   year-marker:
     textColor: "{colors.accent}"
     typography: "{typography.title}"
@@ -156,7 +163,7 @@ A monochrome slate paper-and-ink palette with a single warm orange that earns it
 
 ### Neutral
 - **Paper** (`paper`): the whole page, header included. Pure white in light; **Night Paper** (`paper-dark`) in dark.
-- **Paper Tint** (`paper-2`): only as the hover wash behind small icon controls (language switcher, theme toggle) and as the placeholder behind a loading screenshot. Never a section band.
+- **Paper Tint** (`paper-2`): only as the hover wash behind small icon controls (language switcher, theme toggle, lightbox buttons) and as the placeholder behind a loading screenshot or thumbnail. Never a section band.
 - **Ink** (`ink`): names, titles, notes, body emphasis, quiet links at rest.
 - **Slate** (`ink-muted`): descriptions, role line, section notes, nav links, list items.
 - **Pale Slate** (`ink-subtle`): meta rows, non-date rail labels (Education), footer copy and links, list dashes.
@@ -236,10 +243,17 @@ The unit of the changelog, in the content column right of the year rail, max 48r
 2. Meta row: sector, role, period, team, dot-separated, tabular, Pale Slate.
 3. First-person note (Note style, Ink).
 4. Description (Body, Slate).
-5. Screenshot (16:9, 8px, Hairline frame).
+5. Screenshot gallery (below), or a single screenshot (16:9, 8px, Hairline frame) for a work without one (EPIC).
 6. "What shipped" label and a dash list (Body, Slate).
 7. "Built with" label inline with a dot-separated stack line.
 8. Visit link: quiet link showing the host name and an arrow.
+
+### Screenshot gallery
+Lets a reviewer see three to six pages of a system without leaving the page. Images live at `public/img/<slug>/<shot>.webp`, the order is `shots` in `app/utils/works.js`, and every image has a one-line caption in i18n (`projects.<slug>.shots`).
+- **Main shot:** the first image, 16:9, 8px, Hairline frame, cropped from the top, `zoom-in` cursor. It is a button that opens the lightbox at that image.
+- **Filmstrip:** a row of six fixed 16:9 slots under the main shot (6px radius, Hairline frame), so thumbnails keep one size whether a work has three images or six. On hover only the frame turns Strong Hairline. It scrolls sideways on narrow screens.
+- **Lightbox:** a native modal `<dialog>` that fills the viewport on solid Paper, with no translucent backdrop, blur or shadow. A top bar holds the tabular counter (`2 / 6`, Pale Slate) and a close button. A bottom bar holds the previous and next arrows and the caption (Body 500, Ink, centred). Both bars are separated from the image by a hairline. Images are contained, never cropped, inside a Hairline frame.
+- **Motion:** none. Previous, next and the arrow keys swap the image instantly. On touch the track is a native scroll-snap strip, so a swipe follows the finger and nothing animates on its own. Esc closes it and focus returns to the thumbnail that opened it. The page behind does not scroll while it is open.
 
 ### Experience and stack rows
 The same rail grammar: a 0.875rem 600 rail label (orange for a period, Pale Slate for a non-date label such as Education; Ink for stack group names), content to the right, hairlines between rows.
